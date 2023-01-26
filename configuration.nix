@@ -97,6 +97,7 @@
       ardour
       carla
       firefox
+      gnupg
       helvum
       qjackctl
     ];
