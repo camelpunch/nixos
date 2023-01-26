@@ -97,7 +97,6 @@
       ardour
       carla
       firefox
-      gnupg
       helvum
       qjackctl
     ];
@@ -115,8 +114,16 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      git
+     gnupg
      wget
   ];
+
+  programs.ssh.startAgent = false;
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   programs.neovim = {
      enable = true;
