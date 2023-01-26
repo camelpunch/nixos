@@ -12,6 +12,9 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.extraModprobeConfig = ''
+    options snd_usb_audio vid=0x1235 pid=0x8214 device_setup=1
+  '';
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/5c6a8bae-b1c6-4d46-9f90-61a46d933326";
