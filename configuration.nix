@@ -94,8 +94,11 @@
     description = "Andrew Bruce";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = with pkgs; [
+      ardour
+      carla
       firefox
-    #  thunderbird
+      helvum
+      qjackctl
     ];
   };
 
@@ -111,7 +114,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      git
-     qjackctl
      wget
   ];
 
