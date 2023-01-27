@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./focusrite-scarlett-18i8.nix
+      ./andrew.nix
       <home-manager/nixos>
     ];
 
@@ -88,30 +90,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.andrew = {
-    isNormalUser = true;
-    description = "Andrew Bruce";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = with pkgs; [
-      ardour
-      carla
-      firefox
-      helvum
-      qjackctl
-    ];
-  };
-  home-manager.users.andrew = { pkgs, ... }: {
-    home.stateVersion = "22.11";
-    home.packages = [
-      pkgs.ardour
-      pkgs.carla
-      pkgs.firefox
-      pkgs.helvum
-      pkgs.qjackctl
-    ];
-  };
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
