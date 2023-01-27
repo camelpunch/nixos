@@ -107,11 +107,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     git
-     gnupg
-     bintools
-     sysfsutils
-     wget
+    gcc
+    git
+    gnumake
+    gnupg
+    bintools
+    sysfsutils
+    wget
   ];
 
   programs.ssh.startAgent = false;
