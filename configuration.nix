@@ -110,6 +110,7 @@
      git
      gnupg
      bintools
+     sysfsutils
      wget
   ];
 
