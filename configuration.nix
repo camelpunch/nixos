@@ -9,8 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./focusrite-scarlett-18i8.nix
-      ./andrew.nix
       <home-manager/nixos>
+      ./andrew.nix
     ];
 
   # Bootloader.
