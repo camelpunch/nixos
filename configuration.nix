@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./focusrite-scarlett-18i8.nix
       <home-manager/nixos>
       ./andrew.nix
     ];
@@ -71,6 +70,11 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Scarlett 18i8 config
+  boot.extraModprobeConfig = ''
+    options snd_usb_audio vid=0x1235 pid=0x8214 device_setup=1
+  '';
 
   # Enable sound with pipewire.
   sound.enable = true;
