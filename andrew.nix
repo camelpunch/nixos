@@ -13,6 +13,7 @@
       pkgs.ardour
       pkgs.carla
       pkgs.firefox-wayland
+      pkgs.gnome3.gnome-tweaks
       pkgs.helvum
       pkgs.pass
       pkgs.qjackctl
