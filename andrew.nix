@@ -25,10 +25,11 @@
       userName = "Andrew Bruce";
       userEmail = "me@andrewbruce.net";
       aliases = {
+        br = "branch";
         ci = "commit --verbose";
         co = "checkout";
-        st = "status";
         di = "diff";
+        st = "status";
       };
     };
   };
