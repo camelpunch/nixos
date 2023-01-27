@@ -16,5 +16,16 @@
       pkgs.helvum
       pkgs.qjackctl
     ];
+    programs.git = {
+      enable = true;
+      userName = "Andrew Bruce";
+      userEmail = "me@andrewbruce.net";
+      aliases = {
+        ci = "commit --verbose";
+        co = "checkout";
+        st = "status";
+        di = "diff";
+      };
+    };
   };
 }
