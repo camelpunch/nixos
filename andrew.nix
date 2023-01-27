@@ -16,6 +16,7 @@
       pkgs.helvum
       pkgs.pass
       pkgs.qjackctl
+      pkgs.wl-clipboard
       pkgs.yubikey-manager
     ];
     programs.git = {
