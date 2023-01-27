@@ -12,7 +12,7 @@
     home.packages = [
       pkgs.ardour
       pkgs.carla
-      pkgs.firefox
+      pkgs.firefox-wayland
       pkgs.helvum
       pkgs.pass
       pkgs.qjackctl
