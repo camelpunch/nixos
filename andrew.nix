@@ -16,6 +16,7 @@
       pkgs.helvum
       pkgs.pass
       pkgs.qjackctl
+      pkgs.yubikey-manager
     ];
     programs.git = {
       enable = true;
