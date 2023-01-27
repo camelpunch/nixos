@@ -18,6 +18,7 @@
       pkgs.pass
       pkgs.pinentry-gnome
       pkgs.qjackctl
+      pkgs.qpwgraph
       pkgs.wl-clipboard
       pkgs.yubikey-manager
     ];
