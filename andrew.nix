@@ -16,6 +16,7 @@
       pkgs.gnome3.gnome-tweaks
       pkgs.helvum
       pkgs.pass
+      pkgs.pinentry-gnome
       pkgs.qjackctl
       pkgs.wl-clipboard
       pkgs.yubikey-manager
