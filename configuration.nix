@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -99,6 +100,16 @@
       firefox
       helvum
       qjackctl
+    ];
+  };
+  home-manager.users.andrew = { pkgs, ... }: {
+    home.stateVersion = "22.11";
+    home.packages = [
+      pkgs.ardour
+      pkgs.carla
+      pkgs.firefox
+      pkgs.helvum
+      pkgs.qjackctl
     ];
   };
 
