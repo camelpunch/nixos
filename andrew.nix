@@ -14,6 +14,7 @@
       pkgs.carla
       pkgs.firefox
       pkgs.helvum
+      pkgs.pass
       pkgs.qjackctl
     ];
     programs.git = {
