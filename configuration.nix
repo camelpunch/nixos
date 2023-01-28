@@ -131,6 +131,11 @@
   programs.neovim = {
      enable = true;
      defaultEditor = true;
+     configure = {
+       customRC = ''
+         luafile /home/andrew/.local/share/nvim/init.lua
+       '';
+     };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
