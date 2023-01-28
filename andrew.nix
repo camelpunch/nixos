@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -8,6 +8,16 @@
     extraGroups = [ "networkmanager" "wheel" "audio" ];
   };
   home-manager.users.andrew = { pkgs, ... }: {
+    home.file = {
+      gnome-keyring-ssh = {
+        target = ".config/autostart/gnome-keyring-ssh.desktop";
+        text = ''
+  [Desktop Entry]
+  Type=Application
+  Hidden=true
+        '';
+      };
+    };
     home.stateVersion = "22.11";
     home.packages = [
       pkgs.ardour
