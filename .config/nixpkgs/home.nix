@@ -32,6 +32,7 @@
     qjackctl
     qpwgraph
     rustc
+    signal-desktop
     wl-clipboard
     yubikey-manager
   ];
