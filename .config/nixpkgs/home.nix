@@ -64,6 +64,20 @@
     };
   };
 
+  programs.readline = {
+    enable = true;
+    bindings = {
+      "\\e[A" = "history-search-backward";
+      "\\e[B" = "history-search-forward";
+    };
+    variables = {
+      completion-ignore-case = true;
+    };
+    extraConfig = ''
+      Space: magic-space
+    '';
+  };
+
   programs.terminator = {
     enable = true;
     config = {
