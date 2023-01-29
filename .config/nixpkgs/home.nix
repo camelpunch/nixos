@@ -19,17 +19,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.file = {
-    gnome-keyring-ssh = {
-      target = ".config/autostart/gnome-keyring-ssh.desktop";
-      text = ''
-        [Desktop Entry]
-        Type=Application
-        Hidden=true
-      '';
-    };
-  };
-
   home.packages = with pkgs; [
     ardour
     cargo
@@ -92,4 +81,15 @@
   };
 
   programs.tmate.enable = true;
+
+  home.file = {
+    gnome-keyring-ssh = {
+      target = ".config/autostart/gnome-keyring-ssh.desktop";
+      text = ''
+        [Desktop Entry]
+        Type=Application
+        Hidden=true
+      '';
+    };
+  };
 }
