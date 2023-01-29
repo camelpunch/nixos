@@ -25,6 +25,7 @@
     carla
     firefox-wayland
     gnome3.gnome-tweaks
+    google-cloud-sdk
     helvum
     k9s
     pass
