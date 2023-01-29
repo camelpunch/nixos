@@ -54,6 +54,13 @@
     '';
   };
 
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "gruvbox-dark";
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "Andrew Bruce";
