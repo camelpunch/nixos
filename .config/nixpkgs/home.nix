@@ -97,6 +97,8 @@
 
   programs.tmate.enable = true;
 
+  programs.tmux.enable = true;
+
   home.file = {
     gnome-keyring-ssh = {
       target = ".config/autostart/gnome-keyring-ssh.desktop";
