@@ -71,6 +71,11 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  services.k3s = {
+    enable = true;
+    role = "server";
+  };
+
   # Scarlett 18i8 config
   boot.extraModprobeConfig = ''
     options snd_usb_audio vid=0x1235 pid=0x8214 device_setup=1
@@ -122,6 +127,7 @@
     gnupg
     htop
     iftop
+    k3s
     sysfsutils
     wget
   ];
@@ -161,6 +167,9 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.firewall.allowedTCPPorts = [
+    6443
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

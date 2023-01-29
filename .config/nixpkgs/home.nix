@@ -38,6 +38,7 @@
     pkgs.firefox-wayland
     pkgs.gnome3.gnome-tweaks
     pkgs.helvum
+    pkgs.k9s
     pkgs.pass
     pkgs.pinentry-gnome
     pkgs.qjackctl
