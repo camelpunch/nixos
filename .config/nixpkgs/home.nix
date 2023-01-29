@@ -34,6 +34,7 @@
 
   home.packages = with pkgs; [
     ardour
+    cargo
     carla
     firefox-wayland
     gnome3.gnome-tweaks
@@ -43,6 +44,7 @@
     pinentry-gnome
     qjackctl
     qpwgraph
+    rustc
     wl-clipboard
     yubikey-manager
   ];
