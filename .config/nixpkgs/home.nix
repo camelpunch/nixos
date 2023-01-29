@@ -32,19 +32,19 @@
     };
   };
 
-  home.packages = [
-    pkgs.ardour
-    pkgs.carla
-    pkgs.firefox-wayland
-    pkgs.gnome3.gnome-tweaks
-    pkgs.helvum
-    pkgs.k9s
-    pkgs.pass
-    pkgs.pinentry-gnome
-    pkgs.qjackctl
-    pkgs.qpwgraph
-    pkgs.wl-clipboard
-    pkgs.yubikey-manager
+  home.packages = with pkgs; [
+    ardour
+    carla
+    firefox-wayland
+    gnome3.gnome-tweaks
+    helvum
+    k9s
+    pass
+    pinentry-gnome
+    qjackctl
+    qpwgraph
+    wl-clipboard
+    yubikey-manager
   ];
 
   programs.bash = {
