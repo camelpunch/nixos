@@ -23,6 +23,7 @@
     ardour
     cargo
     carla
+    dig
     firefox-wayland
     gnome3.gnome-tweaks
     google-cloud-sdk
