@@ -16,8 +16,6 @@
   # changes in each release.
   home.stateVersion = "22.11";
 
-  programs.tmate.enable = true;
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -85,4 +83,6 @@
       };
     };
   };
+
+  programs.tmate.enable = true;
 }
