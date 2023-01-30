@@ -111,6 +111,12 @@
 
   programs.tmux.enable = true;
 
+  dconf.settings = {
+    "org/gnome/desktop/input-sources" = {
+      xkb-options = [ "caps:ctrl_modifier" ];
+    };
+  };
+
   home.file = {
     gnome-keyring-ssh = {
       target = ".config/autostart/gnome-keyring-ssh.desktop";

@@ -65,7 +65,6 @@
   services.xserver = {
     layout = "us";
     xkbVariant = "";
-    xkbOptions = "terminate:ctrl_alt_bksp,caps:ctrl_modifier";
   };
 
   # Enable CUPS to print documents.
