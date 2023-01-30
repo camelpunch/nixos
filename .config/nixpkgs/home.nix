@@ -25,7 +25,6 @@
     carla
     dig
     du-dust
-    firefox-wayland
     gcc
     git
     gnome3.gnome-tweaks
@@ -60,6 +59,17 @@
     enable = true;
     config = {
       theme = "gruvbox-dark";
+    };
+  };
+
+  programs.firefox = {
+    enable = true;
+    profiles = {
+      andrew = {
+        settings = {
+          "apz.gtk.pangesture.delta_mode" = 2;
+        };
+      };
     };
   };
 
