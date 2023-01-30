@@ -26,6 +26,7 @@
     carla
     dig
     du-dust
+    file
     gcc
     git
     gnome3.gnome-tweaks
