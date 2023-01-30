@@ -21,6 +21,7 @@
 
   home.packages = with pkgs; [
     ardour
+    audacity
     cargo
     carla
     dig
