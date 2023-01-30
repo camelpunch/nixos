@@ -26,7 +26,7 @@
   boot.initrd.luks.devices."luks-26861216-bdc0-4196-a13f-1d9b8caaebfe".device = "/dev/disk/by-uuid/26861216-bdc0-4196-a13f-1d9b8caaebfe";
   boot.initrd.luks.devices."luks-26861216-bdc0-4196-a13f-1d9b8caaebfe".keyFile = "/crypto_keyfile.bin";
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "p14s"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
