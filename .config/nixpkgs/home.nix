@@ -24,10 +24,17 @@
     cargo
     carla
     dig
+    du-dust
     firefox-wayland
+    gcc
+    git
     gnome3.gnome-tweaks
+    gnumake
+    gnupg
     google-cloud-sdk
     helvum
+    htop
+    iftop
     k9s
     lsof
     pass
@@ -36,6 +43,8 @@
     qpwgraph
     rustc
     signal-desktop
+    sysfsutils
+    wget
     wl-clipboard
     yubikey-manager
   ];
