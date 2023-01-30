@@ -29,6 +29,7 @@
     google-cloud-sdk
     helvum
     k9s
+    lsof
     pass
     pinentry-gnome
     qjackctl
