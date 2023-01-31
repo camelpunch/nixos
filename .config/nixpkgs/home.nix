@@ -42,6 +42,7 @@
     pinentry-gnome
     qjackctl
     qpwgraph
+    rnix-lsp
     rustc
     signal-desktop
     sysfsutils
