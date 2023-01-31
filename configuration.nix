@@ -124,10 +124,6 @@
 
   programs.ssh.startAgent = false;
   services.pcscd.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
 
   programs.neovim = {
     enable = true;

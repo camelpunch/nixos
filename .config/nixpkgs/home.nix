@@ -147,6 +147,12 @@
     };
   };
 
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    pinentryFlavor = "gnome3";
+  };
+
   home.file = {
     gnome-keyring-ssh = {
       target = ".config/autostart/gnome-keyring-ssh.desktop";
