@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -129,13 +130,13 @@
   };
 
   programs.neovim = {
-     enable = true;
-     defaultEditor = true;
-     configure = {
-       customRC = ''
-         luafile /home/andrew/.local/share/nvim/init.lua
-       '';
-     };
+    enable = true;
+    defaultEditor = true;
+    configure = {
+      customRC = ''
+        luafile /home/andrew/.local/share/nvim/init.lua
+      '';
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are

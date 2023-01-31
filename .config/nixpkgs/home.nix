@@ -54,7 +54,7 @@
   programs.bash = {
     enable = true;
     bashrcExtra = ''
-    export PS1="\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
+      export PS1="\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
     '';
   };
 
@@ -67,28 +67,30 @@
 
   programs.firefox = {
     enable = true;
-    profiles = let
-      baseSettings = {
-        "apz.gtk.pangesture.delta_mode" = 2;
-        "signon.rememberSignons" = false;
-      };
-      baseSearch = {
-        force = true;
-      };
-    in {
-      "Andrew" = {
-        isDefault = true;
-        id = 0;
-        settings = baseSettings;
-        search = baseSearch;
-      };
+    profiles =
+      let
+        baseSettings = {
+          "apz.gtk.pangesture.delta_mode" = 2;
+          "signon.rememberSignons" = false;
+        };
+        baseSearch = {
+          force = true;
+        };
+      in
+      {
+        "Andrew" = {
+          isDefault = true;
+          id = 0;
+          settings = baseSettings;
+          search = baseSearch;
+        };
 
-      "Ignition Works" = {
-        id = 1;
-        settings = baseSettings;
-        search = baseSearch;
+        "Ignition Works" = {
+          id = 1;
+          settings = baseSettings;
+          search = baseSearch;
+        };
       };
-    };
   };
 
   programs.git = {
