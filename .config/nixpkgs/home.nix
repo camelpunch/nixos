@@ -22,15 +22,12 @@
   home.packages = with pkgs; [
     ardour
     audacity
-    cargo
     carla
     dig
     du-dust
     file
-    gcc
     git
     gnome3.gnome-tweaks
-    gnumake
     gnupg
     google-cloud-sdk
     helvum
@@ -43,7 +40,6 @@
     qjackctl
     qpwgraph
     rnix-lsp
-    rustc
     signal-desktop
     sysfsutils
     wget
