@@ -19,6 +19,19 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  xdg.desktopEntries = with pkgs; {
+    ardour7 = {
+      name = "Ardour";
+      comment = "Ardour Digital Audio Workstation";
+      exec = "env LV2_PATH=/home/andrew/.nix-profile/lib/lv2 ardour7";
+      icon = "ardour7";
+      terminal = false;
+      mimeType = [ "application/x-ardour" ];
+      type = "Application";
+      categories = [ "AudioVideo" "Audio" "X-AudioEditing" "X-Recorders" "X-Multitrack" "X-Jack" ];
+    };
+  };
+
   home.packages = with pkgs; [
     ardour
     audacity
