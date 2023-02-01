@@ -32,33 +32,45 @@
     };
   };
 
-  home.packages = with pkgs; [
-    ardour
-    audacity
-    carla
-    dig
-    du-dust
-    file
-    git
-    gnome3.gnome-tweaks
-    gnupg
-    google-cloud-sdk
-    helvum
-    htop
-    iftop
-    k9s
-    lsof
-    pass
-    pinentry-gnome
-    qjackctl
-    qpwgraph
-    rnix-lsp
-    signal-desktop
-    sysfsutils
-    wget
-    wl-clipboard
-    yubikey-manager
-  ];
+  home.packages = with pkgs;
+    let
+      audioPlugins = [
+        drumgizmo
+        FIL-plugins
+        x42-plugins
+      ];
+      audioPrograms = [
+        ardour
+        audacity
+        carla
+        helvum
+        qjackctl
+        qpwgraph
+      ];
+      security = [
+        gnupg
+        pass
+        pinentry-gnome
+        yubikey-manager
+      ];
+    in
+    [
+      dig
+      du-dust
+      file
+      git
+      gnome3.gnome-tweaks
+      google-cloud-sdk
+      htop
+      iftop
+      k9s
+      lsof
+      rnix-lsp
+      signal-desktop
+      sysfsutils
+      wget
+      wl-clipboard
+    ] ++ audioPrograms ++ audioPlugins ++ security;
 
   programs.bash = {
     enable = true;
