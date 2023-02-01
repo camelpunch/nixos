@@ -84,6 +84,10 @@ in
     options snd_usb_audio vid=0x1235 pid=0x8214 device_setup=1
   '';
 
+  security.pam.loginLimits = [
+    { domain = "*"; item = "memlock"; type = "-"; value = "-1"; }
+  ];
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
