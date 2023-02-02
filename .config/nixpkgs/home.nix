@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -31,6 +31,10 @@
       categories = [ "AudioVideo" "Audio" "X-AudioEditing" "X-Recorders" "X-Multitrack" "X-Jack" ];
     };
   };
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "zoom"
+  ];
 
   home.packages = with pkgs;
     let
@@ -70,6 +74,7 @@
       sysfsutils
       wget
       wl-clipboard
+      zoom-us
     ] ++ audioPrograms ++ audioPlugins ++ security;
 
   programs.bash = {
