@@ -57,6 +57,9 @@
         pinentry-gnome
         yubikey-manager
       ];
+      unfree = [
+        zoom-us
+      ];
     in
     [
       dig
@@ -74,8 +77,7 @@
       sysfsutils
       wget
       wl-clipboard
-      zoom-us
-    ] ++ audioPrograms ++ audioPlugins ++ security;
+    ] ++ audioPrograms ++ audioPlugins ++ security ++ unfree;
 
   programs.bash = {
     enable = true;
