@@ -39,8 +39,20 @@
   home.packages = with pkgs;
     let
       audioPlugins = [
+        aether-lv2
+        airwindows-lv2
+        ams-lv2
         drumgizmo
+        faust
         FIL-plugins
+        gxmatcheq-lv2
+        gxplugins-lv2
+        ir.lv2
+        LibreArp
+        mod-arpeggiator-lv2
+        rkrlv2
+        surge-XT
+        tamgamp.lv2
         x42-plugins
       ];
       audioPrograms = [
