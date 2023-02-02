@@ -58,6 +58,8 @@ in
     LC_TIME = "en_GB.UTF-8";
   };
 
+  virtualisation.docker.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -112,7 +114,12 @@ in
   users.users.andrew = {
     isNormalUser = true;
     description = "Andrew Bruce";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [
+      "audio"
+      "docker"
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   # Enable automatic login for the user.
