@@ -133,8 +133,8 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    unstable.alsa-scarlett-gui
     k3s
+    unstable.alsa-scarlett-gui
   ];
 
   programs.ssh.startAgent = false;
