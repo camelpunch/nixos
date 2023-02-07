@@ -42,6 +42,7 @@
         aether-lv2
         airwindows-lv2
         ams-lv2
+        distrho
         drumgizmo
         faust
         FIL-plugins
@@ -59,6 +60,7 @@
         ardour
         audacity
         carla
+        guitarix
         helvum
         qjackctl
         qpwgraph
