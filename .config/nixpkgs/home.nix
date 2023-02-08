@@ -85,6 +85,7 @@
       htop
       iftop
       k9s
+      kubectl
       kubernetes-helm
       lsof
       rnix-lsp
