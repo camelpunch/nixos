@@ -94,6 +94,19 @@
 
   services.logind.lidSwitch = "ignore";
 
+  services.postgresql = {
+    enable = true;
+    enableTCPIP = true;
+    ensureUsers = [
+      {
+        name = "affable";
+        ensurePermissions = {
+          "DATABASE affable" = "ALL PRIVILEGES";
+        };
+      }
+    ];
+  };
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 6443 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
