@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   unstable = import <nixos-unstable> { config = config.nixpkgs.config; };
@@ -77,9 +77,13 @@ in
   services.printing.enable = true;
 
   services.k3s = {
-    enable = false;
+    enable = true;
     role = "server";
+    extraFlags = toString [
+      "--write-kubeconfig-mode=666"
+    ];
   };
+  systemd.services.k3s.wantedBy = lib.mkForce [ ];
 
   # Scarlett 18i8 config
   boot.extraModprobeConfig = ''
