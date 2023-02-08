@@ -81,7 +81,7 @@
       file
       git
       gnome3.gnome-tweaks
-      google-cloud-sdk
+      (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
       htop
       iftop
       k9s
