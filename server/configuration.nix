@@ -97,6 +97,9 @@
   services.postgresql = {
     enable = true;
     enableTCPIP = true;
+    ensureDatabases = [
+      "affable"
+    ];
     ensureUsers = [
       {
         name = "affable";
