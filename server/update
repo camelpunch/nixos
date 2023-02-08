@@ -3,4 +3,4 @@
 set -eu
 
 git push server main
-ssh server -- sudo nixos-rebuild switch
+ssh -t server -- sudo nixos-rebuild switch
