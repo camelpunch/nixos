@@ -85,6 +85,7 @@
       htop
       iftop
       k9s
+      kubernetes-helm
       lsof
       rnix-lsp
       signal-desktop
