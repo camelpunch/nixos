@@ -88,6 +88,7 @@
       kubectl
       kubernetes-helm
       lsof
+      ripgrep
       rnix-lsp
       signal-desktop
       sysfsutils
