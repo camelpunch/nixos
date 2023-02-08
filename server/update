@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -eu
+
+git push server main
+ssh server -- sudo nixos-rebuild switch
