@@ -71,6 +71,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    k3s
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -85,6 +86,11 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.k3s = {
+    enable = true;
+    role = "server";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
