@@ -92,6 +92,8 @@
     role = "server";
   };
 
+  services.logind.lidSwitch = "ignore";
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 6443 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
