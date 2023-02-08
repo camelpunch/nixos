@@ -107,6 +107,21 @@
     ];
   };
 
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      item = "nofile";
+      type = "-";
+      value = "unlimited";
+    }
+    {
+      domain = "*";
+      item = "memlock";
+      type = "-";
+      value = "unlimited";
+    }
+  ];
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 6443 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
