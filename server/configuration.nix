@@ -108,6 +108,13 @@
         };
       }
     ];
+    authentication = ''
+      # type  database  user      address           method
+      local   all       all                         trust
+      host    all       all       127.0.0.1/32      trust
+      host    all       all       ::1/128           trust
+      host    affable   affable   192.168.1.0/24    trust
+    '';
   };
 
   security.pam.loginLimits = [
@@ -126,7 +133,7 @@
   ];
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 6443 ];
+  networking.firewall.allowedTCPPorts = [ 6443 5432 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
