@@ -65,6 +65,9 @@
         qjackctl
         qpwgraph
       ];
+      graphicsPrograms = [
+        gimp
+      ];
       security = [
         gnupg
         pass
@@ -94,7 +97,7 @@
       sysfsutils
       wget
       wl-clipboard
-    ] ++ audioPrograms ++ audioPlugins ++ security ++ unfree;
+    ] ++ audioPrograms ++ audioPlugins ++ graphicsPrograms ++ security ++ unfree;
 
   programs.bash = {
     enable = true;
