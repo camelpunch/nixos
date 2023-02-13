@@ -95,6 +95,7 @@
       rnix-lsp
       signal-desktop
       sysfsutils
+      usbutils
       wget
       wl-clipboard
     ] ++ audioPrograms ++ audioPlugins ++ graphicsPrograms ++ security ++ unfree;
