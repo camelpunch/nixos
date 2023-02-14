@@ -15,6 +15,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.blacklistedKernelModules = [
+    "ath10k_pci"
+    "btusb"
+    "uvcvideo"
+  ];
 
   # Setup keyfile
   boot.initrd.secrets = {
