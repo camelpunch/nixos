@@ -95,6 +95,7 @@
       rnix-lsp
       signal-desktop
       sysfsutils
+      unzip
       usbutils
       wget
       wl-clipboard
