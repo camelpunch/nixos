@@ -96,6 +96,7 @@
       rnix-lsp
       signal-desktop
       sysfsutils
+      transmission-gtk
       unzip
       usbutils
       wget
