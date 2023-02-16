@@ -84,6 +84,7 @@
         carla
         guitarix
         helvum
+        polyphone
         qjackctl
         qpwgraph
       ];
