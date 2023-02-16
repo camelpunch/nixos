@@ -90,6 +90,7 @@
       k9s
       kubectl
       kubernetes-helm
+      libreoffice
       lsof
       ripgrep
       rnix-lsp
