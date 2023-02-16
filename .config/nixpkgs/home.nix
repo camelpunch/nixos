@@ -63,6 +63,7 @@
         aether-lv2
         airwindows-lv2
         ams-lv2
+        bespokesynth
         distrho
         drumgizmo
         faust
