@@ -85,6 +85,7 @@
         carla
         guitarix
         helvum
+        hydrogen
         polyphone
         qjackctl
         qpwgraph
