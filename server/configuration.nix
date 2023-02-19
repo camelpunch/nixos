@@ -69,7 +69,9 @@
     isNormalUser = true;
     description = "Andrew Bruce";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [
+      lsof
+    ];
   };
 
   # List packages installed in system profile. To search, run:
