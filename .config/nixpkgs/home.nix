@@ -86,6 +86,7 @@
         guitarix
         helvum
         hydrogen
+        pianobooster
         polyphone
         qjackctl
         qpwgraph
