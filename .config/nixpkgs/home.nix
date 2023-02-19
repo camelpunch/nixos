@@ -105,6 +105,7 @@
       ];
     in
     [
+      binutils
       dig
       du-dust
       file
