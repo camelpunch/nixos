@@ -66,6 +66,7 @@
         bespokesynth
         distrho
         drumgizmo
+        drumkv1
         faust
         FIL-plugins
         gxmatcheq-lv2
