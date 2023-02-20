@@ -119,6 +119,7 @@
       kubernetes-helm
       libreoffice
       lsof
+      nmap
       ripgrep
       rnix-lsp
       signal-desktop
