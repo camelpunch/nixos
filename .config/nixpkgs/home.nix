@@ -74,6 +74,7 @@
         gxplugins-lv2
         ir.lv2
         LibreArp
+        lsp-plugins
         mod-arpeggiator-lv2
         rkrlv2
         sfizz
