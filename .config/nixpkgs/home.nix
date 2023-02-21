@@ -76,6 +76,7 @@
         LibreArp
         mod-arpeggiator-lv2
         rkrlv2
+        sfizz
         surge-XT
         tamgamp.lv2
         x42-plugins
