@@ -69,6 +69,7 @@
         drumkv1
         faust
         FIL-plugins
+        geonkick
         gxmatcheq-lv2
         gxplugins-lv2
         ir.lv2
