@@ -110,6 +110,7 @@
     [
       binutils
       dig
+      direnv
       du-dust
       file
       git
@@ -139,6 +140,7 @@
     bashrcExtra = ''
       export PS1="\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
       source <(k3s completion bash)
+      eval "$(direnv hook bash)"
     '';
   };
 
