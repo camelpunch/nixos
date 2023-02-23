@@ -64,6 +64,8 @@
         airwindows-lv2
         ams-lv2
         bespokesynth
+        bschaffl
+        calf
         distrho
         drumgizmo
         drumkv1
@@ -81,6 +83,7 @@
         surge-XT
         tamgamp.lv2
         x42-plugins
+        zynaddsubfx
       ];
       audioPrograms = [
         ardour
