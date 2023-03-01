@@ -103,19 +103,18 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    permitRootLogin = "no";
-    passwordAuthentication = false;
-  };
-
   services.k3s = {
     enable = true;
     role = "server";
   };
 
   services.logind.lidSwitch = "ignore";
+
+  services.openssh = {
+    enable = true;
+    permitRootLogin = "no";
+    passwordAuthentication = false;
+  };
 
   services.postgresql = {
     enable = true;
