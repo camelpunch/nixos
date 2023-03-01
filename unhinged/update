@@ -2,5 +2,5 @@
 
 set -eu
 
-git push unhinged main
+git push --force-with-lease unhinged main
 ssh -t unhinged -- sudo nixos-rebuild switch
