@@ -109,6 +109,9 @@
       "8.8.8.8"
       "8.8.4.4"
     ];
+    extraConfig = ''
+      address=/*.affable.test/127.0.0.1
+    '';
   };
 
   services.k3s = {
