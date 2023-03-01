@@ -106,8 +106,7 @@
   services.dnsmasq = {
     enable = true;
     servers = [
-      "8.8.8.8"
-      "8.8.4.4"
+      "192.168.1.182"
     ];
     extraConfig = ''
       address=/*.affable.test/127.0.0.1
