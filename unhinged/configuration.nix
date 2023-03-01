@@ -103,6 +103,14 @@
 
   # List services that you want to enable:
 
+  services.dnsmasq = {
+    enable = true;
+    servers = [
+      "8.8.8.8"
+      "8.8.4.4"
+    ];
+  };
+
   services.k3s = {
     enable = true;
     role = "server";
