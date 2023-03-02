@@ -66,6 +66,7 @@
         bespokesynth
         bschaffl
         calf
+        ChowKick
         distrho
         drumgizmo
         drumkv1
