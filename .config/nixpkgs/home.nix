@@ -128,6 +128,7 @@
       libreoffice
       lsof
       nmap
+      pciutils
       ripgrep
       rnix-lsp
       signal-desktop
