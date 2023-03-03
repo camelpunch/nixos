@@ -139,6 +139,7 @@
       usbutils
       wget
       wl-clipboard
+      zip
     ] ++ audioPrograms ++ audioPlugins ++ graphicsPrograms ++ security ++ unfree;
 
   programs.bash = {
