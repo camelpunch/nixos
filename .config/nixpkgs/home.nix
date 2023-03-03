@@ -112,6 +112,7 @@
       ];
     in
     [
+      awscli2
       binutils
       dig
       direnv
