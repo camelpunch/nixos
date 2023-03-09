@@ -94,6 +94,7 @@
       ];
       graphicsPrograms = [
         gimp
+        imagemagick
       ];
       security = [
         gnupg
