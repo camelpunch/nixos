@@ -73,6 +73,7 @@
         LibreArp
         lsp-plugins
         mod-arpeggiator-lv2
+        ninjas2
         rkrlv2
         sfizz
         surge-XT
