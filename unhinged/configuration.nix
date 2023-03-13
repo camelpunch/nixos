@@ -118,6 +118,11 @@
   services.k3s = {
     enable = true;
     role = "server";
+    extraFlags = toString [
+      "--cluster-cidr=10.42.0.0/16,fd42::/56"
+      "--service-cidr=10.43.0.0/16,fd43::/112"
+      "--node-ip=192.168.1.182,2001:8b0:b184:5567:2c26:39c0:7c01:4a28"
+    ];
   };
 
   services.logind.lidSwitch = "ignore";
