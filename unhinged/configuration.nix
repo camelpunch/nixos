@@ -126,6 +126,16 @@
     enable = true;
     permitRootLogin = "no";
     passwordAuthentication = false;
+    listenAddresses = [
+      {
+        addr = "[::]";
+        port = 2222;
+      }
+      {
+        addr = "0.0.0.0";
+        port = 2222;
+      }
+    ];
   };
 
   services.postgresql = {
