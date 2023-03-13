@@ -19,6 +19,15 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      "unhinged" = {
+        port = 2222;
+      };
+    };
+  };
+
   home.sessionVariables = {
     LV2_PATH = "/home/andrew/.nix-profile/lib/lv2";
   };
