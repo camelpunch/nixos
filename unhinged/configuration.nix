@@ -112,6 +112,7 @@
     extraConfig = ''
       address=/*.affable.test/127.0.0.1
       address=/*.affable.app/192.168.1.182
+      address=/*.affable.app/2001:8b0:b184:5567:2c26:39c0:7c01:4a28
     '';
   };
 
