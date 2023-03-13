@@ -28,6 +28,8 @@
     };
   };
 
+  programs.bottom.enable = true;
+
   home.sessionVariables = {
     LV2_PATH = "/home/andrew/.nix-profile/lib/lv2";
   };
