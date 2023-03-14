@@ -106,10 +106,12 @@
   services.dnsmasq = {
     enable = true;
     servers = [
-      "8.8.8.8"
-      "8.8.4.4"
+      "2001:8b0:6464::1"
+      "2001:8b0:6464::2"
     ];
     extraConfig = ''
+      no-resolv
+      no-poll
       listen-address=192.168.1.182,2001:8b0:b184:5567:2c26:39c0:7c01:4a28
       address=/*.affable.test/127.0.0.1
       address=/*.affable.app/192.168.1.182
