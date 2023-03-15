@@ -151,6 +151,9 @@ in
         port = 2222;
       }
     ];
+    extraConfig = ''
+      UseDNS no
+    '';
   };
 
   services.postgresql = {
