@@ -116,7 +116,7 @@ in
     extraConfig = ''
       no-resolv
       no-poll
-      listen-address=${unhinged-ipv4},${unhinged-ipv6}
+      listen-address=127.0.0.1,::1,${unhinged-ipv4},${unhinged-ipv6}
       address=/*.affable.test/127.0.0.1
       address=/*.affable.app/${unhinged-ipv4}
       address=/*.affable.app/${unhinged-ipv6}
