@@ -110,8 +110,8 @@ in
   services.dnsmasq = {
     enable = true;
     servers = [
-      "2001:8b0:6464::1"
-      "2001:8b0:6464::2"
+      "8.8.8.8"
+      "8.8.4.4"
     ];
     extraConfig = ''
       no-resolv
