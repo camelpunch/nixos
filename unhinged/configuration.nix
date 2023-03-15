@@ -4,6 +4,10 @@
 
 { config, pkgs, ... }:
 
+let
+  unhinged-ipv4 = "192.168.1.182";
+  unhinged-ipv6 = "2001:8b0:b184:5567:2c26:39c0:7c01:4a28";
+in
 {
   imports =
     [
@@ -112,10 +116,12 @@
     extraConfig = ''
       no-resolv
       no-poll
-      listen-address=192.168.1.182,2001:8b0:b184:5567:2c26:39c0:7c01:4a28
+      listen-address=${unhinged-ipv4},${unhinged-ipv6}
       address=/*.affable.test/127.0.0.1
-      address=/*.affable.app/192.168.1.182
-      address=/*.affable.app/2001:8b0:b184:5567:2c26:39c0:7c01:4a28
+      address=/*.affable.app/${unhinged-ipv4}
+      address=/*.affable.app/${unhinged-ipv6}
+      address=/unhinged/${unhinged-ipv4}
+      address=/unhinged/${unhinged-ipv6}
     '';
   };
 
@@ -125,7 +131,7 @@
     extraFlags = toString [
       "--cluster-cidr=10.42.0.0/16,fd42::/56"
       "--service-cidr=10.43.0.0/16,fd43::/112"
-      "--node-ip=192.168.1.182,2001:8b0:b184:5567:2c26:39c0:7c01:4a28"
+      "--node-ip=${unhinged-ipv4},${unhinged-ipv6}"
     ];
   };
 
