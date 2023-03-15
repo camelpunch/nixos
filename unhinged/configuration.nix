@@ -161,12 +161,19 @@ in
     enableTCPIP = true;
     ensureDatabases = [
       "affable"
+      "atc"
     ];
     ensureUsers = [
       {
         name = "affable";
         ensurePermissions = {
           "DATABASE affable" = "ALL PRIVILEGES";
+        };
+      }
+      {
+        name = "concourse";
+        ensurePermissions = {
+          "DATABASE atc" = "ALL PRIVILEGES";
         };
       }
     ];
@@ -177,6 +184,8 @@ in
       host    all       all       ::1/128           trust
       host    affable   affable   192.168.1.0/24    trust
       host    affable   affable   10.42.0.0/16      trust
+      host    atc       concourse 192.168.1.0/24    trust
+      host    atc       concourse 10.42.0.0/16      trust
     '';
   };
 
