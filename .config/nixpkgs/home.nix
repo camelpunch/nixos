@@ -30,6 +30,9 @@
 
   programs.bottom.enable = true;
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
   home.sessionVariables = {
     LV2_PATH = "/home/andrew/.nix-profile/lib/lv2";
   };
