@@ -157,6 +157,10 @@
     bashrcExtra = ''
       export PS1="\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
       source <(k3s completion bash)
+      if command -v fly 2>/dev/null
+      then
+        source <(fly completion --shell=bash)
+      fi
       bind 'Space: magic-space'
       eval "$(direnv hook bash)"
     '';
