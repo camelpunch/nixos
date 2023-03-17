@@ -149,6 +149,7 @@
       unzip
       usbutils
       wget
+      whois
       wl-clipboard
       zip
     ] ++ audioPrograms ++ audioPlugins ++ graphicsPrograms ++ security ++ unfree;
