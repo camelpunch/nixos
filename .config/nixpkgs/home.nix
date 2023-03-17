@@ -103,6 +103,7 @@
         guitarix
         helvum
         hydrogen
+        lmms
         pianobooster
         polyphone
         qjackctl
