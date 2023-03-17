@@ -32,6 +32,7 @@
 
   home.sessionPath = [
     "$HOME/.local/bin"
+    "$HOME/workspace/google-cloud-sdk/bin"
   ];
   home.sessionVariables = {
     LV2_PATH = "/home/andrew/.nix-profile/lib/lv2";
@@ -130,7 +131,6 @@
       file
       git
       gnome3.gnome-tweaks
-      (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
       htop
       iftop
       k9s
