@@ -6,7 +6,7 @@
 
 let
   unhinged-ipv4 = "192.168.1.182";
-  unhinged-ipv6 = "2001:8b0:b184:5567:2c26:39c0:7c01:4a28";
+  unhinged-ipv6 = "2001:8b0:b184:5567::2";
 in
 {
   imports =
@@ -46,20 +46,19 @@ in
 
   boot.kernelParams = [ "consoleblank=5" ];
 
-  networking.hostName = ""; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking = {
+    networkmanager.enable = true;
+    hostName = "unhinged";
+    interfaces.enp0s20f0u2.ipv6.addresses = [
+      {
+        address = unhinged-ipv6;
+        prefixLength = 64;
+      }
+    ];
+  };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
   time.timeZone = "Europe/London";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
