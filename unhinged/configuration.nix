@@ -86,6 +86,7 @@ in
     description = "Andrew Bruce";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      dig
       lsof
     ];
   };
