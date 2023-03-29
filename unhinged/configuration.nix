@@ -116,6 +116,7 @@ in
       "2001:4860:4860::8844"
     ];
     extraConfig = ''
+      no-hosts
       no-resolv
       no-poll
       address=/*.affable.test/127.0.0.1
