@@ -112,11 +112,12 @@ in
     servers = [
       "8.8.8.8"
       "8.8.4.4"
+      "2001:4860:4860::8888"
+      "2001:4860:4860::8844"
     ];
     extraConfig = ''
       no-resolv
       no-poll
-      listen-address=127.0.0.1,::1,${unhinged-ipv4},${unhinged-ipv6}
       address=/*.affable.test/127.0.0.1
       address=/*.affable.app/${unhinged-ipv4}
       address=/*.affable.app/${unhinged-ipv6}
