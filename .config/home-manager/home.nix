@@ -23,6 +23,7 @@
     enable = true;
     matchBlocks = {
       "unhinged" = {
+        hostname = "192.168.1.182";
         port = 2222;
       };
     };
