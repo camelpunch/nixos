@@ -8,6 +8,13 @@ let
   unstable = import <nixos-unstable> { config = config.nixpkgs.config; };
 in
 {
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   imports =
     [
       # Include the results of the hardware scan.
