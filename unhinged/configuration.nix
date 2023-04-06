@@ -49,12 +49,23 @@ in
   networking = {
     networkmanager.enable = true;
     hostName = "unhinged";
-    interfaces.enp0s20f0u2.ipv6.addresses = [
-      {
-        address = unhinged-ipv6;
-        prefixLength = 64;
-      }
-    ];
+    interfaces = {
+      enp0s20f0u2 = {
+        useDHCP = false;
+        ipv4.addresses = [
+          {
+            address = unhinged-ipv4;
+            prefixLength = 24;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = unhinged-ipv6;
+            prefixLength = 64;
+          }
+        ];
+      };
+    };
   };
 
   time.timeZone = "Europe/London";
