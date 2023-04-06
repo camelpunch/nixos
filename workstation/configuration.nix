@@ -4,9 +4,6 @@
 
 { config, lib, pkgs, ... }:
 
-# let
-#   unstable = import <nixos-unstable> { config = config.nixpkgs.config; };
-# in
 {
   nix = {
     package = pkgs.nixUnstable;
@@ -150,7 +147,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     k3s
-    # unstable.alsa-scarlett-gui
+    alsa-scarlett-gui
   ];
 
   programs.ssh.startAgent = false;
