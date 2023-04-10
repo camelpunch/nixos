@@ -215,6 +215,11 @@
       di = "diff";
       st = "status";
     };
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
   };
 
   programs.readline = {
