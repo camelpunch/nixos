@@ -105,6 +105,7 @@
         helvum
         hydrogen
         lmms
+        mixxx
         pianobooster
         polyphone
         qjackctl
@@ -152,6 +153,7 @@
       wget
       whois
       wl-clipboard
+      youtube-dl
       zip
     ] ++ audioPrograms ++ audioPlugins ++ graphicsPrograms ++ security ++ unfree;
 
