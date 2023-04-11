@@ -129,7 +129,6 @@
       awscli2
       binutils
       dig
-      direnv
       du-dust
       file
       git
@@ -170,7 +169,6 @@
         source <(fly completion --shell=bash)
       fi
       bind 'Space: magic-space'
-      eval "$(direnv hook bash)"
     '';
   };
 
@@ -179,6 +177,11 @@
     config = {
       theme = "gruvbox-dark";
     };
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.firefox = {
