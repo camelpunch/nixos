@@ -129,6 +129,7 @@
       awscli2
       binutils
       dig
+      dive
       du-dust
       file
       git
