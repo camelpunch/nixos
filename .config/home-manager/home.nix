@@ -98,6 +98,7 @@
         zynaddsubfx
       ];
       audioPrograms = [
+        abcde
         ardour
         audacity
         carla
