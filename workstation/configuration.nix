@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, musnix, pkgs, ... }:
 
 {
   nix = {
@@ -25,7 +25,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  boot.kernelPackages = pkgs.linuxPackages_6_1;
+  musnix.enable = true;
+  musnix.kernel.realtime = true;
+  # boot.kernelPackages = pkgs.linuxPackages_6_1;
 
   # Setup keyfile
   boot.initrd.secrets = {
