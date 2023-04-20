@@ -188,6 +188,10 @@
     nix-direnv.enable = true;
   };
 
+  programs.chromium = {
+    enable = true;
+  };
+
   programs.firefox = {
     enable = true;
     profiles =
