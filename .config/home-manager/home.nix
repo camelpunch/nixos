@@ -139,6 +139,7 @@
       gnome3.gnome-tweaks
       htop
       iftop
+      jq
       k9s
       kubectl
       kubernetes-helm
@@ -156,6 +157,7 @@
       wget
       whois
       wl-clipboard
+      xclip
       youtube-dl
       zip
     ] ++ audioPrograms ++ audioPlugins ++ graphicsPrograms ++ security ++ unfree;
