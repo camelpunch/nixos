@@ -219,6 +219,12 @@
           settings = baseSettings;
           search = baseSearch;
         };
+
+        "33 Teams" = {
+          id = 2;
+          settings = baseSettings;
+          search = baseSearch;
+        };
       };
   };
 
