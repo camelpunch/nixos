@@ -47,11 +47,11 @@ in
   boot.kernelParams = [ "consoleblank=5" ];
 
   networking = {
+    useDHCP = false;
     networkmanager.enable = true;
     hostName = "unhinged";
     interfaces = {
       enp0s20f0u2 = {
-        useDHCP = false;
         ipv4.addresses = [
           {
             address = unhinged-ipv4;
