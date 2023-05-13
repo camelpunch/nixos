@@ -75,6 +75,7 @@ in
   };
 
   networking = {
+    dhcpcd.enable = false;
     hostName = "unhinged";
   };
 
