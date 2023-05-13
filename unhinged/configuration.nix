@@ -50,6 +50,8 @@ in
   boot.kernelParams = [ "consoleblank=5" ];
 
   systemd.network = {
+    enable = true;
+
     networks = {
       enp0s20f0u2 = {
         matchConfig = {
