@@ -59,8 +59,8 @@ in
         };
         DHCP = "no";
         addresses = [
-          "${unhinged-ipv4}/24"
-          "${unhinged-ipv6}/64"
+          { Address = "${unhinged-ipv4}/24"; }
+          { Address = "${unhinged-ipv6}/64"; }
         ];
         dns = [
           "127.0.0.1"
