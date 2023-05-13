@@ -129,6 +129,7 @@ in
 
   # List services that you want to enable:
 
+  services.resolved.enable = false;
   services.dnsmasq = {
     enable = true;
     servers = [
