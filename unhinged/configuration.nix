@@ -6,7 +6,10 @@
 
 let
   unhinged-ipv4 = "192.168.1.182";
-  unhinged-ipv6 = "2001:8b0:b184:5567::2";
+  prefix-ipv6 = "2001:8b0:b184:5567";
+  router-ipv4 = "192.168.1.1";
+  router-ipv6 = "${prefix-ipv6}::1";
+  unhinged-ipv6 = "${prefix-ipv6}::2";
 in
 {
   imports =
@@ -46,26 +49,31 @@ in
 
   boot.kernelParams = [ "consoleblank=5" ];
 
-  networking = {
-    useDHCP = false;
-    networkmanager.enable = true;
-    hostName = "unhinged";
-    interfaces = {
+  systemd.network = {
+    networks = {
       enp0s20f0u2 = {
-        ipv4.addresses = [
-          {
-            address = unhinged-ipv4;
-            prefixLength = 24;
-          }
+        matchConfig = {
+          Name = "enp0s20f0u2";
+        };
+        DHCP = "no";
+        addresses = [
+          "${unhinged-ipv4}/24"
+          "${unhinged-ipv6}/64"
         ];
-        ipv6.addresses = [
-          {
-            address = unhinged-ipv6;
-            prefixLength = 64;
-          }
+        dns = [
+          "127.0.0.1"
+          "::1"
+        ];
+        gateway = [
+          "${router-ipv4}"
+          "${router-ipv6}"
         ];
       };
     };
+  };
+
+  networking = {
+    hostName = "unhinged";
   };
 
   time.timeZone = "Europe/London";
