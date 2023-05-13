@@ -64,8 +64,9 @@
   };
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "zoom"
+    "skypeforlinux"
     "spotify"
+    "zoom"
   ];
 
   home.packages = with pkgs;
@@ -124,6 +125,7 @@
         yubikey-manager
       ];
       unfree = [
+        skypeforlinux
         spotify
         zoom-us
       ];
