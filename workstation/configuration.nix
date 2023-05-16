@@ -12,6 +12,9 @@
       keep-derivations = true
       keep-outputs = true
     '';
+    settings = {
+      trusted-users = [ "andrew" ];
+    };
   };
 
   imports =
