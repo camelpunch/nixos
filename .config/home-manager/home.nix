@@ -113,6 +113,7 @@
         polyphone
         qjackctl
         qpwgraph
+        sooperlooper
       ];
       graphicsPrograms = [
         gimp
