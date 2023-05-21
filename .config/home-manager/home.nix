@@ -104,6 +104,7 @@
         ardour
         audacity
         carla
+        ft2-clone
         guitarix
         helvum
         hydrogen
