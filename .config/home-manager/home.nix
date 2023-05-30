@@ -158,6 +158,7 @@
       transmission-gtk
       unzip
       usbutils
+      vlc
       wget
       whois
       wl-clipboard
