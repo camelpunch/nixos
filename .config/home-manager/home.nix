@@ -196,10 +196,6 @@
     nix-direnv.enable = true;
   };
 
-  programs.chromium = {
-    enable = true;
-  };
-
   programs.firefox = {
     enable = true;
     profiles =
@@ -216,18 +212,6 @@
         "Andrew" = {
           isDefault = true;
           id = 0;
-          settings = baseSettings;
-          search = baseSearch;
-        };
-
-        "Ignition Works" = {
-          id = 1;
-          settings = baseSettings;
-          search = baseSearch;
-        };
-
-        "33 Teams" = {
-          id = 2;
           settings = baseSettings;
           search = baseSearch;
         };
