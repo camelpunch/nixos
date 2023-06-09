@@ -163,6 +163,7 @@
       whois
       wl-clipboard
       xclip
+      xournal
       youtube-dl
       zip
     ] ++ audioPrograms ++ audioPlugins ++ graphicsPrograms ++ security ++ unfree;
