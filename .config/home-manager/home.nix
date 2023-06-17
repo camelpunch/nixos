@@ -104,6 +104,7 @@
         ardour
         audacity
         carla
+        easyeffects
         ft2-clone
         guitarix
         helvum
@@ -135,6 +136,7 @@
     [
       awscli2
       binutils
+      bless
       dig
       dive
       du-dust
