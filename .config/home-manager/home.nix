@@ -115,9 +115,11 @@
         polyphone
         qjackctl
         qpwgraph
+        scdl
         sooperlooper
       ];
       graphicsPrograms = [
+        ffmpeg
         gimp
         imagemagick
       ];
