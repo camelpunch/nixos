@@ -1,4 +1,4 @@
-{ config, lib, pkgs, nil, ... }:
+{ lib, pkgs, nil, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -39,7 +39,7 @@
     LV2_PATH = "/home/andrew/.nix-profile/lib/lv2";
   };
 
-  xdg.desktopEntries = with pkgs; {
+  xdg.desktopEntries = {
     audacity = {
       name = "Audacity";
       genericName = "Sound Editor";
