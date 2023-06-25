@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, nil, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -153,6 +153,7 @@
       kubernetes-helm
       libreoffice
       lsof
+      nil.packages.${system}.default
       nmap
       pciutils
       ripgrep
