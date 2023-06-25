@@ -132,4 +132,4 @@ lsp.rust_analyzer.setup {
   }
 }
 
-lsp.rnix.setup {}
+lsp.nil_ls.setup {}
