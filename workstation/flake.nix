@@ -1,17 +1,23 @@
 {
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/master;
-    musnix.url = github:musnix/musnix;
+    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    musnix.url = "github:musnix/musnix";
   };
 
-  outputs = inputs@{ self, musnix, nixpkgs }: rec {
-    nixosConfigurations.p14s = nixpkgs.lib.nixosSystem {
+  outputs = inputs@{ self, musnix, nixpkgs }:
+    let
       system = "x86_64-linux";
-      modules = [
-        musnix.nixosModules.musnix
-        ./configuration.nix
-      ];
-      specialArgs = { inherit inputs; };
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      nixosConfigurations.p14s = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          musnix.nixosModules.musnix
+          ./configuration.nix
+        ];
+        specialArgs = { inherit inputs; };
+      };
+      formatter.${system} = pkgs.nixpkgs-fmt;
     };
-  };
 }
