@@ -1,22 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
-let
+{pkgs, ...}: let
   unhinged-ipv4 = "192.168.1.182";
   prefix-ipv6 = "2001:8b0:b184:5567";
   router-ipv4 = "192.168.1.1";
   router-ipv6 = "${prefix-ipv6}::1";
   unhinged-ipv6 = "${prefix-ipv6}::2";
-in
-{
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+in {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -42,12 +37,12 @@ in
     ssh = {
       enable = true;
       port = 2222;
-      authorizedKeys = [ "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFYJpKCj5tBJtJDwI3imbZ0pe9Vs47E5qirQ27a6XBxLcUkwrJXxKT6SZGJYGi0ZRqIkkVyWyASGPjKjQMumuS0= andrew@p14s" ];
-      hostKeys = [ /boot/host_ecdsa_key ];
+      authorizedKeys = ["ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFYJpKCj5tBJtJDwI3imbZ0pe9Vs47E5qirQ27a6XBxLcUkwrJXxKT6SZGJYGi0ZRqIkkVyWyASGPjKjQMumuS0= andrew@p14s"];
+      hostKeys = [/boot/host_ecdsa_key];
     };
   };
 
-  boot.kernelParams = [ "consoleblank=5" ];
+  boot.kernelParams = ["consoleblank=5"];
 
   systemd.network = {
     enable = true;
@@ -59,8 +54,8 @@ in
         };
         DHCP = "no";
         addresses = [
-          { addressConfig = { Address = "${unhinged-ipv4}/24"; }; }
-          { addressConfig = { Address = "${unhinged-ipv6}/64"; }; }
+          {addressConfig = {Address = "${unhinged-ipv4}/24";};}
+          {addressConfig = {Address = "${unhinged-ipv6}/64";};}
         ];
         dns = [
           "127.0.0.1"
@@ -106,7 +101,7 @@ in
   users.users.andrew = {
     isNormalUser = true;
     description = "Andrew Bruce";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       dig
       lsof
@@ -249,5 +244,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }

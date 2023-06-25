@@ -1,10 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ lib, pkgs, ... }:
-
 {
+  lib,
+  pkgs,
+  ...
+}: {
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = ''
@@ -13,15 +14,14 @@
       keep-outputs = true
     '';
     settings = {
-      trusted-users = [ "andrew" ];
+      trusted-users = ["andrew"];
     };
   };
 
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -99,7 +99,7 @@
       "--node-ip=192.168.1.128,2001:8b0:b184:5567:c33f:dabf:ae3b:f8d0"
     ];
   };
-  systemd.services.k3s.wantedBy = lib.mkForce [ ];
+  systemd.services.k3s.wantedBy = lib.mkForce [];
 
   # Scarlett 18i8 config
   boot.extraModprobeConfig = ''
@@ -107,7 +107,12 @@
   '';
 
   security.pam.loginLimits = [
-    { domain = "*"; item = "memlock"; type = "-"; value = "-1"; }
+    {
+      domain = "*";
+      item = "memlock";
+      type = "-";
+      value = "-1";
+    }
   ];
 
   # Enable sound with pipewire.
@@ -126,21 +131,18 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  environment.etc =
-    let
-      json = pkgs.formats.json { };
-    in
-    {
-      "pipewire/pipewire.d/92-low-latency.conf".source = json.generate "92-low-latency.conf" {
-        context.properties = {
-          default.clock.rate = 48000;
-          default.clock.quantum = 128;
-          default.clock.min-quantum = 128;
-          default.clock.max-quantum = 128;
-        };
+  environment.etc = let
+    json = pkgs.formats.json {};
+  in {
+    "pipewire/pipewire.d/92-low-latency.conf".source = json.generate "92-low-latency.conf" {
+      context.properties = {
+        default.clock.rate = 48000;
+        default.clock.quantum = 128;
+        default.clock.min-quantum = 128;
+        default.clock.max-quantum = 128;
       };
     };
-
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -175,11 +177,12 @@
   programs.ssh.startAgent = false;
   services.pcscd.enable = true;
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-run"
-  ];
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "steam"
+      "steam-original"
+      "steam-run"
+    ];
 
   programs.steam.enable = true;
 
