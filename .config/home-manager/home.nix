@@ -1,6 +1,8 @@
-{ lib, pkgs, nil, ... }:
-
 {
+  lib,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "andrew";
@@ -45,7 +47,7 @@
       genericName = "Sound Editor";
       icon = "audacity";
       type = "Application";
-      categories = [ "AudioVideo" "Audio" "AudioVideoEditing" ];
+      categories = ["AudioVideo" "Audio" "AudioVideoEditing"];
       exec = "env GDK_BACKEND=x11 audacity %F";
       mimeType = [
         "application/x-audacity-project"
@@ -63,79 +65,80 @@
     };
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "skypeforlinux"
-    "spotify"
-    "zoom"
-  ];
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "skypeforlinux"
+      "spotify"
+      "zoom"
+    ];
 
-  home.packages = with pkgs;
-    let
-      audioPlugins = [
-        aether-lv2
-        airwindows-lv2
-        ams-lv2
-        bespokesynth
-        bschaffl
-        calf
-        ChowKick
-        distrho
-        drumgizmo
-        drumkv1
-        faust
-        FIL-plugins
-        geonkick
-        gxmatcheq-lv2
-        gxplugins-lv2
-        ir.lv2
-        LibreArp
-        lsp-plugins
-        mod-arpeggiator-lv2
-        ninjas2
-        rkrlv2
-        sfizz
-        surge-XT
-        tamgamp.lv2
-        x42-plugins
-        zynaddsubfx
-      ];
-      audioPrograms = [
-        abcde
-        ardour
-        audacity
-        carla
-        easyeffects
-        ft2-clone
-        guitarix
-        helvum
-        hydrogen
-        lmms
-        mixxx
-        pianobooster
-        polyphone
-        qjackctl
-        qpwgraph
-        scdl
-        sooperlooper
-      ];
-      graphicsPrograms = [
-        ffmpeg
-        gimp
-        imagemagick
-      ];
-      security = [
-        gnupg
-        pass
-        pinentry-gnome
-        yubikey-manager
-      ];
-      unfree = [
-        skypeforlinux
-        spotify
-        zoom-us
-      ];
-    in
+  home.packages = with pkgs; let
+    audioPlugins = [
+      aether-lv2
+      airwindows-lv2
+      ams-lv2
+      bespokesynth
+      bschaffl
+      calf
+      ChowKick
+      distrho
+      drumgizmo
+      drumkv1
+      faust
+      FIL-plugins
+      geonkick
+      gxmatcheq-lv2
+      gxplugins-lv2
+      ir.lv2
+      LibreArp
+      lsp-plugins
+      mod-arpeggiator-lv2
+      ninjas2
+      rkrlv2
+      sfizz
+      surge-XT
+      tamgamp.lv2
+      x42-plugins
+      zynaddsubfx
+    ];
+    audioPrograms = [
+      abcde
+      ardour
+      audacity
+      carla
+      easyeffects
+      ft2-clone
+      guitarix
+      helvum
+      hydrogen
+      lmms
+      mixxx
+      pianobooster
+      polyphone
+      qjackctl
+      qpwgraph
+      scdl
+      sooperlooper
+    ];
+    graphicsPrograms = [
+      ffmpeg
+      gimp
+      imagemagick
+    ];
+    security = [
+      gnupg
+      pass
+      pinentry-gnome
+      yubikey-manager
+    ];
+    unfree = [
+      skypeforlinux
+      spotify
+      zoom-us
+    ];
+  in
     [
+      alejandra
       awscli2
       binutils
       bless
@@ -153,7 +156,7 @@
       kubernetes-helm
       libreoffice
       lsof
-      nil.packages.${system}.default
+      nil
       nmap
       pciutils
       ripgrep
@@ -171,7 +174,12 @@
       xournal
       youtube-dl
       zip
-    ] ++ audioPrograms ++ audioPlugins ++ graphicsPrograms ++ security ++ unfree;
+    ]
+    ++ audioPrograms
+    ++ audioPlugins
+    ++ graphicsPrograms
+    ++ security
+    ++ unfree;
 
   programs.bash = {
     enable = true;
@@ -203,24 +211,22 @@
 
   programs.firefox = {
     enable = true;
-    profiles =
-      let
-        baseSettings = {
-          "apz.gtk.pangesture.delta_mode" = 2;
-          "signon.rememberSignons" = false;
-        };
-        baseSearch = {
-          force = true;
-        };
-      in
-      {
-        "Andrew" = {
-          isDefault = true;
-          id = 0;
-          settings = baseSettings;
-          search = baseSearch;
-        };
+    profiles = let
+      baseSettings = {
+        "apz.gtk.pangesture.delta_mode" = 2;
+        "signon.rememberSignons" = false;
       };
+      baseSearch = {
+        force = true;
+      };
+    in {
+      "Andrew" = {
+        isDefault = true;
+        id = 0;
+        settings = baseSettings;
+        search = baseSearch;
+      };
+    };
   };
 
   programs.git = {
@@ -307,7 +313,7 @@
       accel-profile = "flat";
     };
     "org/gnome/desktop/input-sources" = {
-      xkb-options = [ "caps:ctrl_modifier" ];
+      xkb-options = ["caps:ctrl_modifier"];
     };
   };
 

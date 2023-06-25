@@ -137,7 +137,7 @@ lsp.nil_ls.setup {
   settings = {
     ["nil"] = {
       formatting = {
-        command = {"nix", "fmt", "--", "--"}
+        command = {"alejandra", "-qq"}
       }
     }
   }
