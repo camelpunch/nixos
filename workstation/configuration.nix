@@ -175,16 +175,6 @@
   programs.ssh.startAgent = false;
   services.pcscd.enable = true;
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    configure = {
-      customRC = ''
-        luafile /home/andrew/.local/share/nvim/init.lua
-      '';
-    };
-  };
-
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
     "steam-original"
