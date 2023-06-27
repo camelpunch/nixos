@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+commit_log_message_path=$1
+commit_message_source=$2
+commit_object_name=$3
+
+jq_program="$(cat <<'EOF'
+  .mob as $mob
+| .coauthors
+| to_entries
+| map(select([.key] | inside($mob)))
+| from_entries
+| map("Co-authored-by: \(.name) <\(.email)>")[]
+EOF
+)"
+
+@jq@ --raw-output "$jq_program" < ~/.git-coauthors

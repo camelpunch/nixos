@@ -28,6 +28,22 @@
     };
 
     packages = with pkgs; let
+      mkGitMobScript = (
+        name: (stdenv.mkDerivation
+          rec {
+            inherit name;
+            buildCommand = "install -Dm755 $script $out/bin/${name}";
+            script = substituteAll {
+              src = ./mob/bin/${name};
+              isExecutable = true;
+              jq = "${jq}/bin/jq";
+            };
+          })
+      );
+      gitMob = [
+        (mkGitMobScript "git-mob")
+        (mkGitMobScript "git-mob-print")
+      ];
       audioPlugins = [
         aether-lv2
         airwindows-lv2
@@ -129,6 +145,7 @@
         youtube-dl
         zip
       ]
+      ++ gitMob
       ++ audioPrograms
       ++ audioPlugins
       ++ graphicsPrograms
@@ -224,6 +241,9 @@
       extraConfig = {
         init = {
           defaultBranch = "main";
+        };
+        commit = {
+          template = "~/.gitmessage.txt";
         };
       };
     };
