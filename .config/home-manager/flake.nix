@@ -7,11 +7,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    git-mob = {
+      url = "github:code-supply/git-mob";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixpkgs,
     home-manager,
+    git-mob,
     ...
   }: let
     system = "x86_64-linux";
@@ -26,6 +31,7 @@
 
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
+      extraSpecialArgs = {inherit git-mob;};
     };
   };
 }

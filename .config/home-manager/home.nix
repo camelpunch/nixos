@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  git-mob,
   ...
 }: {
   home = {
@@ -28,22 +29,6 @@
     };
 
     packages = with pkgs; let
-      mkGitMobScript = (
-        name: (stdenv.mkDerivation
-          rec {
-            inherit name;
-            buildCommand = "install -Dm755 $script $out/bin/${name}";
-            script = substituteAll {
-              src = ./mob/bin/${name};
-              isExecutable = true;
-              jq = "${jq}/bin/jq";
-            };
-          })
-      );
-      gitMob = [
-        (mkGitMobScript "git-mob")
-        (mkGitMobScript "git-mob-print")
-      ];
       audioPlugins = [
         aether-lv2
         airwindows-lv2
@@ -117,6 +102,7 @@
         dive
         du-dust
         file
+        git-mob.packages.x86_64-linux.default
         gnome3.gnome-tweaks
         htop
         iftop
@@ -145,7 +131,6 @@
         youtube-dl
         zip
       ]
-      ++ gitMob
       ++ audioPrograms
       ++ audioPlugins
       ++ graphicsPrograms
@@ -243,6 +228,7 @@
           defaultBranch = "main";
         };
         commit = {
+          # hardcoded in the git-mob implementation above
           template = "~/.gitmessage.txt";
         };
       };
