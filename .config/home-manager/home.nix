@@ -101,7 +101,6 @@
         dive
         du-dust
         file
-        git
         gnome3.gnome-tweaks
         htop
         iftop
