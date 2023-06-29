@@ -27,11 +27,16 @@
 
       # Specify your home configuration modules here, for example,
       # the path to your home.nix.
-      modules = [./home.nix];
+      modules = [./home.nix ./neovim.nix ./git.nix];
 
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
-      extraSpecialArgs = {inherit git-mob;};
+      extraSpecialArgs = {
+        inherit git-mob;
+
+        git.userName = "Andrew Bruce";
+        git.userEmail = "me@andrewbruce.net";
+      };
     };
   };
 }
