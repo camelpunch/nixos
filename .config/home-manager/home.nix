@@ -113,6 +113,7 @@
         libreoffice
         lsof
         nil
+        nix-tree
         nmap
         pciutils
         ripgrep
