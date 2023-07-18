@@ -26,14 +26,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1689625033,
-        "narHash": "sha256-QjFDkA4jR6j16j3m7YQKVc9sEbr56Av0gq/fy2L2KXg=",
-        "path": "/home/andrew/workspace/git-mob",
-        "type": "path"
+        "lastModified": 1689624885,
+        "narHash": "sha256-YcA1PUu3Rir8sgDNRvk5C6k4L9k1qnvnlkLNBLjUmEE=",
+        "owner": "code-supply",
+        "repo": "git-mob",
+        "rev": "55195ccccd20b2dc189ea8ff7e1c3ae7e1a0d6eb",
+        "type": "github"
       },
       "original": {
-        "path": "/home/andrew/workspace/git-mob",
-        "type": "path"
+        "owner": "code-supply",
+        "repo": "git-mob",
+        "type": "github"
       }
     },
     "home-manager": {
