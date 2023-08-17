@@ -138,6 +138,23 @@
     ++ unfree;
 
     file = {
+      pipewire-config =
+        let
+          json = pkgs.formats.json { };
+        in
+        {
+          target = ".config/pipewire/pipewire.conf.d/92-low-latency.conf";
+          source = json.generate "92-low-latency.conf" {
+            context.properties = {
+              default.clock.rate = 48000;
+              default.clock.quantum = 16;
+              default.clock.min-quantum = 16;
+              default.clock.max-quantum = 16;
+            };
+          };
+
+        };
+
       gnome-keyring-ssh = {
         target = ".config/autostart/gnome-keyring-ssh.desktop";
         text = ''
