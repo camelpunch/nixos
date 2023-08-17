@@ -22,6 +22,7 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
+    formatter.${system} = pkgs.nixpkgs-fmt;
     homeConfigurations.andrew = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 

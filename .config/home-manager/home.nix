@@ -1,8 +1,7 @@
-{
-  lib,
-  pkgs,
-  git-mob,
-  ...
+{ lib
+, pkgs
+, git-mob
+, ...
 }: {
   home = {
     # Home Manager needs a bit of information about you and the
@@ -93,50 +92,50 @@
         zoom-us
       ];
     in
-      [
-        alejandra
-        awscli2
-        binutils
-        bless
-        dig
-        dive
-        du-dust
-        file
-        git-mob.packages.x86_64-linux.default
-        gnome3.gnome-tweaks
-        htop
-        iftop
-        jq
-        k9s
-        kubectl
-        kubernetes-helm
-        libreoffice
-        lsof
-        nil
-        nix-tree
-        nmap
-        pciutils
-        ripgrep
-        rnix-lsp
-        signal-desktop
-        sysfsutils
-        transmission-gtk
-        unzip
-        usbutils
-        vlc
-        wget
-        whois
-        wl-clipboard
-        xclip
-        xournal
-        youtube-dl
-        zip
-      ]
-      ++ audioPrograms
-      ++ audioPlugins
-      ++ graphicsPrograms
-      ++ security
-      ++ unfree;
+    [
+      alejandra
+      awscli2
+      binutils
+      bless
+      dig
+      dive
+      du-dust
+      file
+      git-mob.packages.x86_64-linux.default
+      gnome3.gnome-tweaks
+      htop
+      iftop
+      jq
+      k9s
+      kubectl
+      kubernetes-helm
+      libreoffice
+      lsof
+      nil
+      nix-tree
+      nmap
+      pciutils
+      ripgrep
+      rnix-lsp
+      signal-desktop
+      sysfsutils
+      transmission-gtk
+      unzip
+      usbutils
+      vlc
+      wget
+      whois
+      wl-clipboard
+      xclip
+      xournal
+      youtube-dl
+      zip
+    ]
+    ++ audioPrograms
+    ++ audioPlugins
+    ++ graphicsPrograms
+    ++ security
+    ++ unfree;
 
     file = {
       gnome-keyring-ssh = {
@@ -192,22 +191,24 @@
 
     firefox = {
       enable = true;
-      profiles = let
-        baseSettings = {
-          "apz.gtk.pangesture.delta_mode" = 2;
-          "signon.rememberSignons" = false;
+      profiles =
+        let
+          baseSettings = {
+            "apz.gtk.pangesture.delta_mode" = 2;
+            "signon.rememberSignons" = false;
+          };
+          baseSearch = {
+            force = true;
+          };
+        in
+        {
+          "Andrew" = {
+            isDefault = true;
+            id = 0;
+            settings = baseSettings;
+            search = baseSearch;
+          };
         };
-        baseSearch = {
-          force = true;
-        };
-      in {
-        "Andrew" = {
-          isDefault = true;
-          id = 0;
-          settings = baseSettings;
-          search = baseSearch;
-        };
-      };
     };
 
     readline = {
@@ -249,7 +250,7 @@
       genericName = "Sound Editor";
       icon = "audacity";
       type = "Application";
-      categories = ["AudioVideo" "Audio" "AudioVideoEditing"];
+      categories = [ "AudioVideo" "Audio" "AudioVideoEditing" ];
       exec = "env GDK_BACKEND=x11 audacity %F";
       mimeType = [
         "application/x-audacity-project"
@@ -279,7 +280,7 @@
       accel-profile = "flat";
     };
     "org/gnome/desktop/input-sources" = {
-      xkb-options = ["caps:ctrl_modifier"];
+      xkb-options = [ "caps:ctrl_modifier" ];
     };
   };
 
