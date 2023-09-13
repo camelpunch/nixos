@@ -107,7 +107,6 @@
       htop
       iftop
       jq
-      k9s
       kubectl
       kubernetes-helm
       libreoffice
@@ -169,6 +168,10 @@
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
+
+    k9s = {
+      enable = true;
+    };
 
     ssh = {
       enable = true;
