@@ -97,6 +97,7 @@
       awscli2
       binutils
       bless
+      cntr
       dig
       dive
       du-dust
