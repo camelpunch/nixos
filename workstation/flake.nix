@@ -1,6 +1,9 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+      follows = "musnix/nixpkgs";
+    };
     musnix.url = "github:musnix/musnix";
   };
 
