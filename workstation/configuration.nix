@@ -28,8 +28,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  musnix.enable = true;
-  musnix.kernel.realtime = true;
   # boot.kernelPackages = pkgs.linuxPackages_6_1;
 
   # Setup keyfile
