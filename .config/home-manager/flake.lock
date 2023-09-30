@@ -26,11 +26,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1693647143,
-        "narHash": "sha256-T+L/elLLIIEf9dGdYAQQaifenVc/Ue1h9rCjs1EvFqE=",
+        "lastModified": 1696081496,
+        "narHash": "sha256-QgRFGKnUcHMpwhp0WeDRJFkigP7G58/dFxL8JYdeD7Q=",
         "owner": "code-supply",
         "repo": "git-mob",
-        "rev": "f972d053858973a894ca8d57d9040698d14f3d42",
+        "rev": "5a098f49367ed0ac3e66ca05828e62ebed1df48d",
         "type": "github"
       },
       "original": {
