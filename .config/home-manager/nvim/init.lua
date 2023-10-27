@@ -16,34 +16,34 @@ vim.opt.expandtab = true
 vim.o.wrap = false
 
 -- ctrl-hjkl pane movement
-vim.api.nvim_set_keymap('n', '<c-h>', '<c-w>h', {noremap = true})
-vim.api.nvim_set_keymap('n', '<c-j>', '<c-w>j', {noremap = true})
-vim.api.nvim_set_keymap('n', '<c-k>', '<c-w>k', {noremap = true})
-vim.api.nvim_set_keymap('n', '<c-l>', '<c-w>l', {noremap = true})
+vim.api.nvim_set_keymap('n', '<c-h>', '<c-w>h', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-j>', '<c-w>j', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-k>', '<c-w>k', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-l>', '<c-w>l', { noremap = true })
 
 -- quick quit buffer
-vim.api.nvim_set_keymap('n', '<leader>q', ':q<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>q', ':q<cr>', { noremap = true })
 
 -- clear highlighting with space
-vim.api.nvim_set_keymap('n', '<space>', ':nohlsearch<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<space>', ':nohlsearch<cr>', { noremap = true })
 
 -- telescope
-vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope grep_string<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope grep_string<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', { noremap = true })
 
 -- vim-test
-vim.api.nvim_set_keymap('n', '<F9>', ':w<cr>:TestNearest<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<F12>', ':w<cr>:TestFile<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<F10>', ':w<cr>:TestLast<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<F8>', ':w<cr>:TestVisit<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<F7>', ':w<cr>:TestSuite<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<F9>', ':w<cr>:TestNearest<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<F12>', ':w<cr>:TestFile<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<F10>', ':w<cr>:TestLast<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<F8>', ':w<cr>:TestVisit<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<F7>', ':w<cr>:TestSuite<cr>', { noremap = true })
 
 -- sort lists inside []
-vim.api.nvim_set_keymap('n', '<F5>', '!i[sort<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<F5>', '!i[sort<cr>', { noremap = true })
 
 -- format before save
 vim.api.nvim_create_autocmd('BufWritePre', {
@@ -71,7 +71,7 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -185,8 +185,9 @@ lsp.nil_ls.setup {
   settings = {
     ["nil"] = {
       formatting = {
-        command = {"nixpkgs-fmt"}
+        command = { "nixpkgs-fmt" }
       }
     }
-  }
+  },
+  capabilities = capabilities
 }
