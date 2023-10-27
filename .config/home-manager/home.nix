@@ -120,6 +120,7 @@
       ripgrep
       rnix-lsp
       signal-desktop
+      sumneko-lua-language-server
       sysfsutils
       transmission-gtk
       unzip
