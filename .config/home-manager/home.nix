@@ -112,6 +112,8 @@
       libreoffice
       lsof
       nil
+      nix-index
+      nixpkgs-fmt
       nix-tree
       nmap
       pciutils
