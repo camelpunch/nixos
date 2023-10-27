@@ -13,7 +13,7 @@
       keep-outputs = true
     '';
     settings = {
-      trusted-users = ["andrew"];
+      trusted-users = [ "andrew" ];
     };
   };
 
@@ -96,7 +96,7 @@
       "--node-ip=192.168.1.128,2001:8b0:b184:5567:c33f:dabf:ae3b:f8d0"
     ];
   };
-  systemd.services.k3s.wantedBy = lib.mkForce [];
+  systemd.services.k3s.wantedBy = lib.mkForce [ ];
 
   # Scarlett 18i8 config
   boot.extraModprobeConfig = ''
