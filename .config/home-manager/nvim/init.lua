@@ -1,4 +1,6 @@
 local lsp = require 'lspconfig'
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local cmp = require 'cmp'
 
 vim.api.nvim_exec([[ autocmd vimenter * ++nested colorscheme gruvbox ]], false)
 
@@ -50,6 +52,17 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end,
 })
 
+-- completion
+cmp.setup({
+  mapping = {
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'buffer' }
+  })
+})
+
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -83,7 +96,8 @@ end
 
 lsp.elixirls.setup {
   on_attach = on_attach,
-  cmd = { "elixir-ls" };
+  cmd = { "elixir-ls" },
+  capabilities = capabilities
 }
 
 lsp.tsserver.setup {

@@ -5,10 +5,12 @@
       defaultEditor = true;
       extraLuaConfig = builtins.readFile nvim/init.lua;
       plugins = with pkgs.vimPlugins; [
+        cmp-nvim-lsp
         commentary
         gruvbox
         idris2-vim
         null-ls-nvim
+        nvim-cmp
         nvim-lspconfig
         nvim-lsp-ts-utils
         plenary-nvim
