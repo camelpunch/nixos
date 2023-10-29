@@ -5,6 +5,14 @@
 { config, pkgs, ... }:
 
 {
+  nix = {
+    extraOptions = ''
+      experimental-features = nix-command flakes repl-flake
+      keep-derivations = true
+      keep-outputs = true
+    '';
+  };
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
