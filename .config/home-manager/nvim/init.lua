@@ -38,6 +38,7 @@ vim.api.nvim_set_keymap('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', { nore
 -- vim-test
 vim.api.nvim_set_keymap('n', '<F9>', ':w<cr>:TestNearest<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<F12>', ':w<cr>:TestFile<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<F11>', ':w<cr>:TestNearest<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<F10>', ':w<cr>:TestLast<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<F8>', ':w<cr>:TestVisit<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<F7>', ':w<cr>:TestSuite<cr>', { noremap = true })
