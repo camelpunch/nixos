@@ -5,18 +5,17 @@
     };
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-  }: let
-    system = "x86_64-linux";
-  in {
-    nixosConfigurations.p14s = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-        ./configuration.nix
-      ];
-      specialArgs = {inherit inputs;};
+  outputs = inputs@{ self, nixpkgs }:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations.p14s = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configuration.nix
+        ];
+        specialArgs = { inherit inputs; };
+      };
     };
-  };
 }
