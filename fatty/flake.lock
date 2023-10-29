@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "common": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-89gv1qq9TJK5Bf40M1lROx2D4TVZgdhwOZcl6XbuAPM=",
+        "path": "/nix/store/1jwh5h6cl9kc1ir7r7dbj3jdi7ll35i2-source/common",
+        "type": "path"
+      },
+      "original": {
+        "path": "/nix/store/1jwh5h6cl9kc1ir7r7dbj3jdi7ll35i2-source/common",
+        "type": "path"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1698318101,
@@ -18,6 +35,7 @@
     },
     "root": {
       "inputs": {
+        "common": "common",
         "nixpkgs": "nixpkgs"
       }
     }
