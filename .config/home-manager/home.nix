@@ -63,7 +63,6 @@
         carla
         easyeffects
         ft2-clone
-        guitarix
         helvum
         hydrogen
         lmms
