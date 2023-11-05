@@ -24,6 +24,7 @@
       "$HOME/workspace/google-cloud-sdk/bin"
     ];
     sessionVariables = {
+      BROWSER = "firefox";
       LV2_PATH = "/home/andrew/.nix-profile/lib/lv2";
     };
 
