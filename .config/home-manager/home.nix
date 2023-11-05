@@ -101,7 +101,7 @@
       dive
       du-dust
       file
-      git-mob.packages.x86_64-linux.default
+      git-mob
       gnome3.gnome-tweaks
       htop
       iftop

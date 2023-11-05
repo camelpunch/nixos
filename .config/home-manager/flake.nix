@@ -35,8 +35,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
         extraSpecialArgs = {
-          inherit git-mob;
-
+          git-mob = git-mob.packages.x86_64-linux.default;
           git.userName = "Andrew Bruce";
           git.userEmail = "me@andrewbruce.net";
         };
