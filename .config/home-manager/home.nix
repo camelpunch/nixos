@@ -113,6 +113,7 @@
       lsof
       nil
       nix-index
+      nixos-generators
       nixpkgs-fmt
       nix-tree
       nmap
