@@ -63,6 +63,7 @@
         audacity
         carla
         easyeffects
+        elektroid
         ft2-clone
         helvum
         hydrogen
