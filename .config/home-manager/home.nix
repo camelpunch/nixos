@@ -114,6 +114,7 @@
       lsof
       nil
       nix-index
+      nixops_unstable
       nixos-generators
       nixpkgs-fmt
       nix-tree
