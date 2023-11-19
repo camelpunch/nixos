@@ -90,6 +90,7 @@
       unfree = [
         skypeforlinux
         spotify
+        tetrio-desktop
         zoom-us
       ];
     in
@@ -299,6 +300,7 @@
     builtins.elem (lib.getName pkg) [
       "skypeforlinux"
       "spotify"
+      "tetrio-desktop"
       "zoom"
     ];
 
