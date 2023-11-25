@@ -39,6 +39,9 @@
   boot.initrd.luks.devices."luks-26861216-bdc0-4196-a13f-1d9b8caaebfe".keyFile = "/crypto_keyfile.bin";
 
   networking.hostName = "p14s"; # Define your hostname.
+  networking.extraHosts = ''
+    127.0.0.1 hosting.code.test
+  '';
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
