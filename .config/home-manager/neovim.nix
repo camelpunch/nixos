@@ -13,19 +13,16 @@
         nvim-cmp
         nvim-lspconfig
         nvim-lsp-ts-utils
+        nvim-treesitter.withAllGrammars
         plenary-nvim
         suda-vim
         telescope-nvim
-        vim-elixir
         vim-fugitive
         vim-gitgutter
         vim-gnupg
-        vim-hcl
-        vim-nix
         vim-repeat
         vim-shellcheck
         vim-surround
-        vim-terraform
         vim-test
         vim-unimpaired
       ];
