@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1699306531,
-        "narHash": "sha256-FXOEDM62lAAlbvJw8KrHKcaUSfGGvtGyMCVjoTTxt54=",
+        "lastModified": 1700927794,
+        "narHash": "sha256-h/bQSOMGbvDjLNUBWG5LlfUjaZk1H26tzQtkpd6SRZc=",
         "ref": "refs/heads/main",
-        "rev": "bee7ed4664364a1f4c56f0a8d4056ad1404861ca",
-        "revCount": 41,
+        "rev": "9907952d8a49bea91a6ea37cdaacdd4df5bb2356",
+        "revCount": 44,
         "type": "git",
         "url": "file:///home/andrew/workspace/git-mob"
       },
