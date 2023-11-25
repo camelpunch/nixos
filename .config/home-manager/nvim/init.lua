@@ -2,6 +2,8 @@ local lsp = require 'lspconfig'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local cmp = require 'cmp'
 
+require('Comment').setup()
+
 vim.api.nvim_exec([[ autocmd vimenter * ++nested colorscheme gruvbox ]], false)
 
 vim.opt.termguicolors = true

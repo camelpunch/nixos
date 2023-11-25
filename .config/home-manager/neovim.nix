@@ -6,7 +6,7 @@
       extraLuaConfig = builtins.readFile nvim/init.lua;
       plugins = with pkgs.vimPlugins; [
         cmp-nvim-lsp
-        commentary
+        comment-nvim
         gruvbox
         idris2-vim
         null-ls-nvim
