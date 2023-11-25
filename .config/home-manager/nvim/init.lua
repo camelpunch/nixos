@@ -162,7 +162,9 @@ lsp.idris2_lsp.setup {}
 lsp.terraform_lsp.setup {}
 vim.g.terraform_fmt_on_save = "1"
 
-lsp.tailwindcss.setup {}
+if vim.fn.executable('tailwindcss-language-server') == 1 then
+  lsp.tailwindcss.setup {}
+end
 
 lsp.rust_analyzer.setup {
   on_attach = on_attach,
