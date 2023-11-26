@@ -15,6 +15,9 @@
     settings = {
       trusted-users = [ "andrew" ];
     };
+
+    binaryCaches = [ "https://nixos-homepage.cachix.org" ];
+    binaryCachePublicKeys = [ "nixos-homepage.cachix.org-1:NHKBt7NjLcWfgkX4OR72q7LVldKJe/JOsfIWFDAn/tE=" ];
   };
 
   imports = [
