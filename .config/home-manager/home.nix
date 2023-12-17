@@ -90,7 +90,6 @@
       unfree = [
         skypeforlinux
         spotify
-        tetrio-desktop
         zoom-us
       ];
     in
