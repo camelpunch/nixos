@@ -131,14 +131,12 @@ in
   services.resolved.enable = false;
   services.dnsmasq = {
     enable = true;
-    settings = {
-      servers = [
-        "8.8.8.8"
-        "8.8.4.4"
-        "2001:4860:4860::8888"
-        "2001:4860:4860::8844"
-      ];
-    };
+    servers = [
+      "8.8.8.8"
+      "8.8.4.4"
+      "2001:4860:4860::8888"
+      "2001:4860:4860::8844"
+    ];
     extraConfig = ''
       no-hosts
       no-resolv
@@ -165,10 +163,8 @@ in
 
   services.openssh = {
     enable = true;
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = false;
-    };
+    permitRootLogin = "no";
+    passwordAuthentication = false;
     listenAddresses = [
       {
         addr = "[::]";
