@@ -75,6 +75,7 @@ in
     dhcpcd.enable = false;
     firewall.enable = false;
     hostName = "unhinged";
+    useNetworkd = true;
   };
 
   time.timeZone = "Europe/London";
