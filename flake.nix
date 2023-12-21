@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     git-mob = {
-      url = "/home/andrew/workspace/git-mob";
+      url = "github:code-supply/git-mob";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
