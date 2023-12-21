@@ -7,17 +7,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1701270173,
-        "narHash": "sha256-UJQJKdMsn2opyIQCcsAc5N2DbRMd8N0065r0dT7MuFM=",
-        "ref": "refs/heads/main",
-        "rev": "30a09e0f20c00cdf7d24282a854cbd8bd50bc349",
-        "revCount": 45,
-        "type": "git",
-        "url": "file:///home/andrew/workspace/git-mob"
+        "lastModified": 1702035976,
+        "narHash": "sha256-vyqCVW9pUpnSOvAK99cBbo3CzYJPOEQjJWN94bIkv+o=",
+        "owner": "code-supply",
+        "repo": "git-mob",
+        "rev": "3f680665dfaaf92174ea8029c42e9fe39c5d5a0a",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/andrew/workspace/git-mob"
+        "owner": "code-supply",
+        "repo": "git-mob",
+        "type": "github"
       }
     },
     "home-manager": {
