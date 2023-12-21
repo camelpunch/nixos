@@ -1,6 +1,7 @@
 local lsp = require 'lspconfig'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local cmp = require 'cmp'
+local elixir = require 'elixir'
 
 require('Comment').setup()
 
@@ -103,10 +104,16 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader><F6>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 end
 
-lsp.elixirls.setup {
-  on_attach = on_attach,
-  cmd = { "elixir-ls" },
-  capabilities = capabilities
+elixir.setup {
+  elixirls = {
+    on_attach = on_attach,
+    cmd = { "elixir-ls" },
+    capabilities = capabilities
+  },
+  credo = {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
 }
 
 lsp.lua_ls.setup {
