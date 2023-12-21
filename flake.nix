@@ -17,6 +17,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      callBox = name: import ./boxes/${name} { inherit nixpkgs system; };
     in
     {
       homeConfigurations.andrew = home-manager.lib.homeManagerConfiguration {
@@ -40,28 +41,9 @@
       };
 
       nixosConfigurations = {
-        fatty = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./fatty/configuration.nix
-            ./modules/steam.nix
-          ];
-        };
-
-        p14s = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./workstation/configuration.nix
-            ./modules/steam.nix
-          ];
-        };
-
-        unhinged = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./unhinged/configuration.nix
-          ];
-        };
+        fatty = callBox "fatty";
+        p14s = callBox "p14s";
+        unhinged = callBox "unhinged";
       };
     };
 }
