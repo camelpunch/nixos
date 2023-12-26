@@ -98,6 +98,7 @@
       awscli2
       binutils
       bless
+      calibre
       cntr
       dig
       dive
