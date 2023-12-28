@@ -9,15 +9,15 @@
       "locked": {
         "lastModified": 1703781820,
         "narHash": "sha256-u1HKHnHHa/JsPHcA6qFjGRSFcJyiPcoAQp3JISbVwpU=",
-        "ref": "refs/heads/main",
+        "owner": "code-supply",
+        "repo": "rusty-git-mob",
         "rev": "72fd740d41680304cb809092fab6cac5a40810f4",
-        "revCount": 50,
-        "type": "git",
-        "url": "file:///home/andrew/workspace/git-mob-rust"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/andrew/workspace/git-mob-rust"
+        "owner": "code-supply",
+        "repo": "rusty-git-mob",
+        "type": "github"
       }
     },
     "home-manager": {

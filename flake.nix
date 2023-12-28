@@ -8,8 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     git-mob = {
-      # url = "github:code-supply/rusty-git-mob";
-      url = "/home/andrew/workspace/git-mob-rust";
+      url = "github:code-supply/rusty-git-mob";
+      # url = "/home/andrew/workspace/rusty-git-mob";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
