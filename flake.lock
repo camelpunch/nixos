@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1703720368,
-        "narHash": "sha256-1NOAmk07mMEEabZYi26OptM1SgwFSjfmiK4Ajtpe8xs=",
+        "lastModified": 1703781820,
+        "narHash": "sha256-u1HKHnHHa/JsPHcA6qFjGRSFcJyiPcoAQp3JISbVwpU=",
         "ref": "refs/heads/main",
-        "rev": "0e9037cf6ecdae4502be0379c8799c6ffeb3558b",
-        "revCount": 38,
+        "rev": "72fd740d41680304cb809092fab6cac5a40810f4",
+        "revCount": 50,
         "type": "git",
         "url": "file:///home/andrew/workspace/git-mob-rust"
       },
