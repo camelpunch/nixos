@@ -16,6 +16,7 @@ home-manager.lib.homeManagerConfiguration {
     ./k8s.nix
     ./kitty.nix
     ./neovim.nix
+    ./terminator.nix
     ./unfree.nix
   ];
 

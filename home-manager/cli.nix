@@ -89,4 +89,10 @@
     tmate.enable = true;
     tmux.enable = true;
   };
+
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    pinentryFlavor = "gnome3";
+  };
 }
