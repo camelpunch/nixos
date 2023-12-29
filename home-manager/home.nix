@@ -33,10 +33,6 @@
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
-    k9s = {
-      enable = true;
-    };
-
     ssh = {
       enable = true;
       matchBlocks = {

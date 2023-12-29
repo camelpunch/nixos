@@ -19,8 +19,6 @@
       htop
       iftop
       jq
-      kubectl
-      kubernetes-helm
       lsof
       nix-index
       nix-tree
