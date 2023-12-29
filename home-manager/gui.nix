@@ -17,7 +17,6 @@
       calibre
       gnome3.gnome-tweaks
       libreoffice
-      nixops_unstable
       nixos-generators
       signal-desktop
       transmission-gtk
