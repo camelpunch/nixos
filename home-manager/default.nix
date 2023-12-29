@@ -4,7 +4,7 @@ home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
 
   modules = [
-    git-mob.nixosModules.home-manager
+    git-mob.nixosModules.homeManager
     ./audio-plugins.nix
     ./audio-programs.nix
     ./cli.nix
