@@ -1,8 +1,9 @@
 { lib
 , pkgs
-, git-mob
 , ...
 }: {
+  fonts.fontconfig.enable = true;
+
   home = {
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
@@ -27,122 +28,6 @@
       BROWSER = "firefox";
       LV2_PATH = "/home/andrew/.nix-profile/lib/lv2";
     };
-
-    packages = with pkgs; let
-      audioPlugins = [
-        aether-lv2
-        airwindows-lv2
-        ams-lv2
-        bespokesynth
-        bschaffl
-        calf
-        ChowKick
-        distrho
-        drumgizmo
-        drumkv1
-        faust
-        FIL-plugins
-        geonkick
-        gxmatcheq-lv2
-        gxplugins-lv2
-        ir.lv2
-        LibreArp
-        lsp-plugins
-        mod-arpeggiator-lv2
-        ninjas2
-        rkrlv2
-        sfizz
-        surge-XT
-        tamgamp.lv2
-        x42-plugins
-        zynaddsubfx
-      ];
-      audioPrograms = [
-        abcde
-        ardour
-        audacity
-        carla
-        easyeffects
-        elektroid
-        ft2-clone
-        helvum
-        hydrogen
-        lmms
-        mixxx
-        pianobooster
-        polyphone
-        qjackctl
-        qpwgraph
-        scdl
-        sooperlooper
-      ];
-      graphicsPrograms = [
-        ffmpeg
-        gimp
-        imagemagick
-      ];
-      security = [
-        gnupg
-        pass
-        pinentry-gnome
-        yubikey-manager
-      ];
-      unfree = [
-        skypeforlinux
-        spotify
-        zoom-us
-      ];
-    in
-    [
-      alejandra
-      awscli2
-      binutils
-      bless
-      calibre
-      cntr
-      dig
-      dive
-      du-dust
-      file
-      git-mob
-      gnome3.gnome-tweaks
-      htop
-      iftop
-      jq
-      kubectl
-      kubernetes-helm
-      libreoffice
-      lsof
-      nil
-      nix-index
-      nixops_unstable
-      nixos-generators
-      nixpkgs-fmt
-      nix-tree
-      nmap
-      pciutils
-      ripgrep
-      rnix-lsp
-      signal-desktop
-      sumneko-lua-language-server
-      sysfsutils
-      transmission-gtk
-      unzip
-      usbutils
-      vlc
-      wget
-      whois
-      wl-clipboard
-      xclip
-      xournal
-      youtube-dl
-      zip
-    ]
-    ++ audioPrograms
-    ++ audioPlugins
-    ++ graphicsPrograms
-    ++ security
-    ++ unfree;
 
     file = {
       pipewire-config =

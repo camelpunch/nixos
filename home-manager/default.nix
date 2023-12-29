@@ -4,9 +4,17 @@ home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
 
   modules = [
-    ./home.nix
-    ./neovim.nix
+    ./audio-plugins.nix
+    ./audio-programs.nix
+    ./cli.nix
+    ./dev.nix
     ./git.nix
+    ./graphics.nix
+    ./gui.nix
+    ./home.nix
+    ./kitty.nix
+    ./neovim.nix
+    ./unfree.nix
   ];
 
   extraSpecialArgs = {
