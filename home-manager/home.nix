@@ -264,6 +264,9 @@
           show_titlebar = false;
           use_system_font = false;
         };
+        keybindings = {
+          full_screen = "<Alt>Return";
+        };
       };
     };
 
