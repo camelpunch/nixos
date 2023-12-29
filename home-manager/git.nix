@@ -1,8 +1,8 @@
-{ git, git-mob, ... }: {
+{ git-mob, ... }: {
   programs.git = {
     enable = true;
-    userName = git.userName;
-    userEmail = git.userEmail;
+    userName = "Andrew Bruce";
+    userEmail = "me@andrewbruce.net";
     aliases = {
       br = "branch";
       ci = "commit --verbose";
