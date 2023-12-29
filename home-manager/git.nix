@@ -1,4 +1,4 @@
-{ git-mob, ... }: {
+{
   programs.git = {
     enable = true;
     userName = "Andrew Bruce";
@@ -10,11 +10,7 @@
       di = "diff";
       st = "status";
     };
-    hooks = {
-      prepare-commit-msg = "${git-mob}/bin/git-mob-prepare-commit-msg";
-    };
     extraConfig = {
-      commit.template = "~/.gitmessage.txt";
       init = {
         defaultBranch = "main";
       };

@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1703781820,
-        "narHash": "sha256-u1HKHnHHa/JsPHcA6qFjGRSFcJyiPcoAQp3JISbVwpU=",
+        "lastModified": 1703860475,
+        "narHash": "sha256-jj4yc6lRU7+kjPAMQVvXdMAl3th0HxpBnp26LBJVuRA=",
         "owner": "code-supply",
         "repo": "rusty-git-mob",
-        "rev": "72fd740d41680304cb809092fab6cac5a40810f4",
+        "rev": "3c7db3b027c57f7f1a2e107c459f2b14bc1c434b",
         "type": "github"
       },
       "original": {

@@ -1,4 +1,4 @@
-{ pkgs, git-mob, ... }:
+{ pkgs, ... }:
 {
   home = {
     sessionPath = [
@@ -14,7 +14,6 @@
       dive
       du-dust
       file
-      git-mob
       gnupg
       htop
       iftop
@@ -38,6 +37,8 @@
   };
 
   programs = {
+    rusty-git-mob.enable = true;
+
     ssh = {
       enable = true;
       matchBlocks = {
