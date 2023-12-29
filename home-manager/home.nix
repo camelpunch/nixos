@@ -16,70 +16,11 @@
     # the Home Manager release notes for a list of state version
     # changes in each release.
     stateVersion = "22.11";
-
-    file = {
-      gnome-keyring-ssh = {
-        target = ".config/autostart/gnome-keyring-ssh.desktop";
-        text = ''
-          [Desktop Entry]
-          Type=Application
-          Hidden=true
-        '';
-      };
-    };
   };
 
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
-
-    ssh = {
-      enable = true;
-      matchBlocks = {
-        "unhinged" = {
-          hostname = "192.168.1.182";
-          port = 2222;
-        };
-      };
-    };
-
-    bottom.enable = true;
-
-    bash = {
-      enable = true;
-      bashrcExtra = ''
-        export PS1="\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
-        source <(k3s completion bash)
-        if command -v fly > /dev/null
-        then
-          source <(fly completion --shell=bash)
-        fi
-        bind 'Space: magic-space'
-      '';
-    };
-
-    bat = {
-      enable = true;
-      config = {
-        theme = "gruvbox-dark";
-      };
-    };
-
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-
-    readline = {
-      enable = true;
-      bindings = {
-        "\\e[A" = "history-search-backward";
-        "\\e[B" = "history-search-forward";
-      };
-      variables = {
-        completion-ignore-case = true;
-      };
-    };
 
     terminator = {
       enable = true;
@@ -100,10 +41,6 @@
         };
       };
     };
-
-    tmate.enable = true;
-
-    tmux.enable = true;
   };
 
   xdg.desktopEntries = {
