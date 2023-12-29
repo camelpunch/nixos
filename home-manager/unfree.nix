@@ -4,7 +4,6 @@
     builtins.elem (lib.getName pkg) [
       "skypeforlinux"
       "spotify"
-      "tetrio-desktop"
       "zoom"
     ];
 
