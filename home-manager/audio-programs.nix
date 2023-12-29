@@ -1,5 +1,29 @@
 { pkgs, ... }:
 {
+  xdg.desktopEntries = {
+    audacity = {
+      name = "Audacity";
+      genericName = "Sound Editor";
+      icon = "audacity";
+      type = "Application";
+      categories = [ "AudioVideo" "Audio" "AudioVideoEditing" ];
+      exec = "env GDK_BACKEND=x11 audacity %F";
+      mimeType = [
+        "application/x-audacity-project"
+        "audio/aac"
+        "audio/ac3"
+        "audio/mp4"
+        "audio/x-ms-wma"
+        "video/mpeg"
+        "audio/flac"
+        "audio/x-flac"
+        "audio/mpeg"
+        "application/ogg"
+        "audio/x-vorbis+ogg"
+      ];
+    };
+  };
+
   home = {
     file = {
       pipewire-config =
