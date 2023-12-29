@@ -1,7 +1,4 @@
-{ lib
-, pkgs
-, ...
-}: {
+{
   fonts.fontconfig.enable = true;
 
   home = {
@@ -20,33 +17,7 @@
     # changes in each release.
     stateVersion = "22.11";
 
-    sessionPath = [
-      "$HOME/.local/bin"
-      "$HOME/workspace/google-cloud-sdk/bin"
-    ];
-    sessionVariables = {
-      BROWSER = "firefox";
-      LV2_PATH = "/home/andrew/.nix-profile/lib/lv2";
-    };
-
     file = {
-      pipewire-config =
-        let
-          json = pkgs.formats.json { };
-        in
-        {
-          target = ".config/pipewire/pipewire.conf.d/92-low-latency.conf";
-          source = json.generate "92-low-latency.conf" {
-            context.properties = {
-              default.clock.rate = 48000;
-              default.clock.quantum = 16;
-              default.clock.min-quantum = 16;
-              default.clock.max-quantum = 16;
-            };
-          };
-
-        };
-
       gnome-keyring-ssh = {
         target = ".config/autostart/gnome-keyring-ssh.desktop";
         text = ''
@@ -57,6 +28,7 @@
       };
     };
   };
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
@@ -100,28 +72,6 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-    };
-
-    firefox = {
-      enable = true;
-      profiles =
-        let
-          baseSettings = {
-            "apz.gtk.pangesture.delta_mode" = 2;
-            "signon.rememberSignons" = false;
-          };
-          baseSearch = {
-            force = true;
-          };
-        in
-        {
-          "Andrew" = {
-            isDefault = true;
-            id = 0;
-            settings = baseSettings;
-            search = baseSearch;
-          };
-        };
     };
 
     readline = {
@@ -183,14 +133,6 @@
       ];
     };
   };
-
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "skypeforlinux"
-      "spotify"
-      "tetrio-desktop"
-      "zoom"
-    ];
 
   dconf.settings = {
     "org/gnome/desktop/peripherals/mouse" = {

@@ -8,6 +8,7 @@ home-manager.lib.homeManagerConfiguration {
     ./audio-programs.nix
     ./cli.nix
     ./dev.nix
+    ./firefox.nix
     ./git.nix
     ./graphics.nix
     ./gui.nix
