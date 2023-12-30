@@ -1,18 +1,13 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-{ pkgs, ... }:
-let
-  unhinged-ipv4 = "192.168.1.182";
-  prefix-ipv6 = "2001:8b0:b184:5567";
-  router-ipv4 = "192.168.1.1";
-  router-ipv6 = "${prefix-ipv6}::1";
-  unhinged-ipv6 = "${prefix-ipv6}::2";
-in
+{ pkgs
+, ipv4
+, ipv6
+, ...
+}:
+
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./network.nix
   ];
 
   # Bootloader.
@@ -34,49 +29,7 @@ in
   boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".device = "/dev/disk/by-uuid/9a963459-0310-4197-9c0d-26ecb1df10dd";
   boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".keyFile = "/crypto_keyfile.bin";
 
-  boot.initrd.network = {
-    enable = true;
-    ssh = {
-      enable = true;
-      port = 2222;
-      authorizedKeys = [ "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFYJpKCj5tBJtJDwI3imbZ0pe9Vs47E5qirQ27a6XBxLcUkwrJXxKT6SZGJYGi0ZRqIkkVyWyASGPjKjQMumuS0= andrew@p14s" ];
-      hostKeys = [ /boot/host_ecdsa_key ];
-    };
-  };
-
   boot.kernelParams = [ "consoleblank=5" ];
-
-  systemd.network = {
-    enable = true;
-
-    networks = {
-      enp0s20f0u2 = {
-        matchConfig = {
-          Name = "enp0s20f0u2";
-        };
-        DHCP = "no";
-        addresses = [
-          { addressConfig = { Address = "${unhinged-ipv4}/24"; }; }
-          { addressConfig = { Address = "${unhinged-ipv6}/64"; }; }
-        ];
-        dns = [
-          "127.0.0.1"
-          "::1"
-        ];
-        gateway = [
-          "${router-ipv4}"
-          "${router-ipv6}"
-        ];
-      };
-    };
-  };
-
-  networking = {
-    dhcpcd.enable = false;
-    firewall.enable = false;
-    hostName = "unhinged";
-    # useNetworkd = true;
-  };
 
   time.timeZone = "Europe/London";
 
@@ -142,10 +95,10 @@ in
       no-resolv
       no-poll
       address=/*.code.test/127.0.0.1
-      address=/*.code.supply/${unhinged-ipv4}
-      address=/*.code.supply/${unhinged-ipv6}
-      address=/unhinged/${unhinged-ipv4}
-      address=/unhinged/${unhinged-ipv6}
+      address=/*.code.supply/${ipv4}
+      address=/*.code.supply/${ipv6}
+      address=/unhinged/${ipv4}
+      address=/unhinged/${ipv6}
     '';
   };
 
@@ -155,32 +108,11 @@ in
     extraFlags = toString [
       "--cluster-cidr=10.42.0.0/16,fd42::/56"
       "--service-cidr=10.43.0.0/16,fd43::/112"
-      "--node-ip=${unhinged-ipv4},${unhinged-ipv6}"
+      "--node-ip=${ipv4},${ipv6}"
     ];
   };
 
   services.logind.lidSwitch = "ignore";
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "yes";
-    };
-    listenAddresses = [
-      {
-        addr = "[::]";
-        port = 2222;
-      }
-      {
-        addr = "0.0.0.0";
-        port = 2222;
-      }
-    ];
-    extraConfig = ''
-      UseDNS no
-    '';
-  };
 
   services.postgresql = {
     enable = true;
