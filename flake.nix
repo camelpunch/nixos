@@ -27,6 +27,13 @@
         inherit home-manager pkgs git-mob;
       };
 
+      colmena = {
+        meta = {
+          nixpkgs = pkgs;
+        };
+        unhinged = import ./boxes/unhinged/configuration.nix;
+      };
+
       nixosConfigurations = {
         fatty = callBox "fatty";
         p14s = callBox "p14s";
