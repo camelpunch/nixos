@@ -1,6 +1,4 @@
 { pkgs
-, ipv4
-, ipv6
 , ...
 }:
 
@@ -10,6 +8,8 @@
     ./tweaks.nix
     ./network.nix
     ./dnsmasq.nix
+    ./k8s.nix
+    ./postgresql.nix
   ];
 
   # Bootloader.
@@ -59,70 +59,9 @@
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
-    k3s
   ];
 
-  services.k3s = {
-    enable = true;
-    role = "server";
-    extraFlags = toString [
-      "--cluster-cidr=10.42.0.0/16,fd42::/56"
-      "--service-cidr=10.43.0.0/16,fd43::/112"
-      "--node-ip=${ipv4},${ipv6}"
-    ];
-  };
-
-  services.postgresql = {
-    enable = true;
-    enableTCPIP = true;
-    ensureDatabases = [
-      "affable"
-      "atc"
-      "hosting"
-    ];
-    ensureUsers = [
-      {
-        name = "affable";
-        ensurePermissions = {
-          "DATABASE affable" = "ALL PRIVILEGES";
-        };
-      }
-      {
-        name = "hosting";
-        ensurePermissions = {
-          "DATABASE hosting" = "ALL PRIVILEGES";
-        };
-      }
-      {
-        name = "concourse";
-        ensurePermissions = {
-          "DATABASE atc" = "ALL PRIVILEGES";
-        };
-      }
-    ];
-    authentication = ''
-      # type  database  user      address           method
-      local   all       all                         trust
-      host    all       all       127.0.0.1/32      trust
-      host    all       all       ::1/128           trust
-      host    affable   affable   192.168.1.0/24    trust
-      host    affable   affable   10.42.0.0/16      trust
-      host    hosting   hosting   192.168.1.0/24    trust
-      host    hosting   hosting   10.42.0.0/16      trust
-      host    atc       concourse 192.168.1.0/24    trust
-      host    atc       concourse 10.42.0.0/16      trust
-    '';
-  };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
 }
