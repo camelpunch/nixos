@@ -163,8 +163,10 @@ in
 
   services.openssh = {
     enable = true;
-    permitRootLogin = "no";
-    passwordAuthentication = false;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "yes";
+    };
     listenAddresses = [
       {
         addr = "[::]";
