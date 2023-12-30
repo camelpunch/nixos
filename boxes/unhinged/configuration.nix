@@ -7,18 +7,15 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./tweaks.nix
     ./network.nix
+    ./dnsmasq.nix
   ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.blacklistedKernelModules = [
-    "ath10k_pci"
-    "btusb"
-    "uvcvideo"
-  ];
 
   # Setup keyfile
   boot.initrd.secrets = {
@@ -28,8 +25,6 @@
   # Enable swap on luks
   boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".device = "/dev/disk/by-uuid/9a963459-0310-4197-9c0d-26ecb1df10dd";
   boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".keyFile = "/crypto_keyfile.bin";
-
-  boot.kernelParams = [ "consoleblank=5" ];
 
   time.timeZone = "Europe/London";
 
@@ -71,37 +66,6 @@
     k3s
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  services.resolved.enable = false;
-  services.dnsmasq = {
-    enable = true;
-    servers = [
-      "8.8.8.8"
-      "8.8.4.4"
-      "2001:4860:4860::8888"
-      "2001:4860:4860::8844"
-    ];
-    extraConfig = ''
-      no-hosts
-      no-resolv
-      no-poll
-      address=/*.code.test/127.0.0.1
-      address=/*.code.supply/${ipv4}
-      address=/*.code.supply/${ipv6}
-      address=/unhinged/${ipv4}
-      address=/unhinged/${ipv6}
-    '';
-  };
-
   services.k3s = {
     enable = true;
     role = "server";
@@ -111,8 +75,6 @@
       "--node-ip=${ipv4},${ipv6}"
     ];
   };
-
-  services.logind.lidSwitch = "ignore";
 
   services.postgresql = {
     enable = true;
@@ -155,24 +117,6 @@
       host    atc       concourse 10.42.0.0/16      trust
     '';
   };
-
-  systemd.extraConfig = ''
-    DefaultLimitNOFILE=1048576
-  '';
-  security.pam.loginLimits = [
-    {
-      domain = "*";
-      item = "nofile";
-      type = "-";
-      value = "unlimited";
-    }
-    {
-      domain = "*";
-      item = "memlock";
-      type = "-";
-      value = "unlimited";
-    }
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
