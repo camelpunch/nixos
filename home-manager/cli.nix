@@ -20,6 +20,7 @@
       iftop
       jq
       lsof
+      moreutils
       nix-index
       nix-tree
       nmap
