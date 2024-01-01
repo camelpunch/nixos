@@ -8,5 +8,8 @@
       name = "Fira Code";
       size = 18;
     };
+    settings = {
+      hide_window_decorations = "yes";
+    };
   };
 }
