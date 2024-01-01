@@ -6,7 +6,7 @@
     font = {
       package = pkgs.fira-code;
       name = "Fira Code";
-      size = 18;
+      size = 14;
     };
     settings = {
       hide_window_decorations = "yes";
