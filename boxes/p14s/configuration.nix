@@ -1,5 +1,4 @@
-{ lib
-, pkgs
+{ pkgs
 , ...
 }: {
   imports = [
@@ -14,18 +13,6 @@
   virtualisation.docker.enable = true;
   services.printing.enable = true;
   services.fwupd.enable = true;
-
-  services.k3s = {
-    enable = true;
-    role = "server";
-    extraFlags = toString [
-      "--write-kubeconfig-mode=666"
-      "--cluster-cidr=10.42.0.0/16,fd42::/56"
-      "--service-cidr=10.43.0.0/16,fd43::/112"
-      "--node-ip=192.168.1.128,2001:8b0:b184:5567:c33f:dabf:ae3b:f8d0"
-    ];
-  };
-  systemd.services.k3s.wantedBy = lib.mkForce [ ];
 
   # Scarlett 18i8 config
   boot.extraModprobeConfig = ''
@@ -84,7 +71,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    k3s
     alsa-scarlett-gui
   ];
 
