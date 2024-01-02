@@ -10,6 +10,7 @@
     };
     settings = {
       hide_window_decorations = "yes";
+      adjust_line_height = "120%";
     };
   };
 }
