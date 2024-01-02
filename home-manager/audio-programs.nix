@@ -46,6 +46,7 @@
 
     packages = with pkgs; [
       abcde
+      alsa-scarlett-gui
       ardour
       audacity
       carla
