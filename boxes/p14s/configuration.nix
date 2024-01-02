@@ -20,23 +20,19 @@
   };
 
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   # boot.kernelPackages = pkgs.linuxPackages_6_1;
 
-  # Setup keyfile
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
   };
 
-  # Enable swap on luks
   boot.initrd.luks.devices."luks-26861216-bdc0-4196-a13f-1d9b8caaebfe".device = "/dev/disk/by-uuid/26861216-bdc0-4196-a13f-1d9b8caaebfe";
   boot.initrd.luks.devices."luks-26861216-bdc0-4196-a13f-1d9b8caaebfe".keyFile = "/crypto_keyfile.bin";
 
@@ -50,13 +46,10 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Europe/London";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -73,20 +66,16 @@
 
   virtualisation.docker.enable = true;
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Configure keymap in X11
   services.xserver = {
     layout = "us";
     xkbVariant = "";
   };
 
-  # Enable CUPS to print documents.
   services.printing.enable = true;
 
   services.fwupd.enable = true;
