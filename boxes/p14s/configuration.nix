@@ -8,22 +8,11 @@
     ./boot.nix
     ./network.nix
     ./locale.nix
+    ./gui.nix
   ];
 
   virtualisation.docker.enable = true;
-
-  services.xserver.enable = true;
-
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
   services.printing.enable = true;
-
   services.fwupd.enable = true;
 
   services.k3s = {
