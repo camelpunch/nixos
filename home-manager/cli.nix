@@ -39,8 +39,6 @@
   };
 
   programs = {
-    rusty-git-mob.enable = true;
-
     ssh = {
       enable = true;
       matchBlocks = {
