@@ -17,5 +17,5 @@
         };
     };
   };
-  unhinged = import ./boxes/unhinged/configuration.nix;
+  unhinged = import ./unhinged/configuration.nix;
 }
