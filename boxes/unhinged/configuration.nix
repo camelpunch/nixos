@@ -4,12 +4,14 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ./tweaks.nix
-    ./network.nix
     ./dnsmasq.nix
+    ./github-runner.nix
+    ./hardware-configuration.nix
     ./k8s.nix
+    ./network.nix
+    ./nix.nix
     ./postgresql.nix
+    ./tweaks.nix
   ];
 
   # Bootloader.
