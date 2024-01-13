@@ -2,6 +2,6 @@
   services.github-runner = {
     enable = true;
     tokenFile = "/run/secrets/github-runner/nixos.token";
-    url = "https://github.com/code-supply/code-supply";
+    url = "https://github.com/code-supply/testnixrunner";
   };
 }
