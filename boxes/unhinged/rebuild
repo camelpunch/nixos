@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
-nixos-rebuild switch \
+verb=${1:-switch}
+
+nixos-rebuild "$verb" \
   --target-host root@unhinged \
   --flake .#unhinged
