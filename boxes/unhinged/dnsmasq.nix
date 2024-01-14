@@ -1,8 +1,8 @@
-{ ipv4
-, ipv6
-, ...
-}:
-
+let
+  prefix-ipv6 = "2001:8b0:b184:5567";
+  ipv4 = "192.168.1.182";
+  ipv6 = "${prefix-ipv6}::2";
+in
 {
   services.resolved.enable = false;
   services.dnsmasq = {

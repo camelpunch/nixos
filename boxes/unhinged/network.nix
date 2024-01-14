@@ -1,9 +1,10 @@
-{ ipv4
-, ipv6
-, router-ipv4
-, router-ipv6
-, ...
-}:
+let
+  prefix-ipv6 = "2001:8b0:b184:5567";
+  ipv4 = "192.168.1.182";
+  ipv6 = "${prefix-ipv6}::2";
+  router-ipv4 = "192.168.1.1";
+  router-ipv6 = "${prefix-ipv6}::1";
+in
 {
   boot.initrd.network = {
     enable = true;

@@ -32,6 +32,7 @@
       nixosConfigurations = {
         fatty = callBox "fatty";
         p14s = callBox "p14s";
+        unhinged = callBox "unhinged";
       };
     };
 }
