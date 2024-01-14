@@ -1,12 +1,8 @@
-{ config
+{ ipv4
+, ipv6
 , ...
 }:
 
-let
-  networkCfg = config.services.unhinged-network;
-  ipv4 = networkCfg.ipv4;
-  ipv6 = networkCfg.ipv6;
-in
 {
   services.resolved.enable = false;
   services.dnsmasq = {

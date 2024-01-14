@@ -1,13 +1,9 @@
-{ config
+{ ipv4
+, ipv6
 , pkgs
 , ...
 }:
 
-let
-  networkCfg = config.services.unhinged-network;
-  ipv4 = networkCfg.ipv4;
-  ipv6 = networkCfg.ipv6;
-in
 {
   environment.systemPackages = with pkgs; [
     k3s

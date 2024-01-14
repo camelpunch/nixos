@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-nixos-rebuild switch \
-  --target-host root@unhinged \
-  --flake .#unhinged
