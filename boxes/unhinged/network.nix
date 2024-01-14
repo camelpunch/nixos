@@ -24,60 +24,60 @@ in
         type = types.str;
       };
     };
+  };
 
-    config = {
-      systemd.network = {
-        enable = true;
+  config = {
+    systemd.network = {
+      enable = true;
 
-        networks = {
-          enp0s20f0u2 = {
-            matchConfig = {
-              Name = "enp0s20f0u2";
-            };
-            DHCP = "no";
-            addresses = [
-              { addressConfig = { Address = "${cfg.ipv4}/24"; }; }
-              { addressConfig = { Address = "${cfg.ipv6}/64"; }; }
-            ];
-            dns = [
-              "127.0.0.1"
-              "::1"
-            ];
-            gateway = [
-              "${cfg.router-ipv4}"
-              "${cfg.router-ipv6}"
-            ];
+      networks = {
+        enp0s20f0u2 = {
+          matchConfig = {
+            Name = "enp0s20f0u2";
           };
+          DHCP = "no";
+          addresses = [
+            { addressConfig = { Address = "${cfg.ipv4}/24"; }; }
+            { addressConfig = { Address = "${cfg.ipv6}/64"; }; }
+          ];
+          dns = [
+            "127.0.0.1"
+            "::1"
+          ];
+          gateway = [
+            "${cfg.router-ipv4}"
+            "${cfg.router-ipv6}"
+          ];
         };
       };
+    };
 
-      networking = {
-        dhcpcd.enable = false;
-        firewall.enable = false;
-        hostName = "unhinged";
-        # useNetworkd = true;
-      };
+    networking = {
+      dhcpcd.enable = false;
+      firewall.enable = false;
+      hostName = "unhinged";
+      # useNetworkd = true;
+    };
 
-      services.openssh = {
-        enable = true;
-        settings = {
-          PasswordAuthentication = false;
-          PermitRootLogin = "yes";
-        };
-        listenAddresses = [
-          {
-            addr = "[::]";
-            port = 2222;
-          }
-          {
-            addr = "0.0.0.0";
-            port = 2222;
-          }
-        ];
-        extraConfig = ''
-          UseDNS no
-        '';
+    services.openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+        PermitRootLogin = "yes";
       };
+      listenAddresses = [
+        {
+          addr = "[::]";
+          port = 2222;
+        }
+        {
+          addr = "0.0.0.0";
+          port = 2222;
+        }
+      ];
+      extraConfig = ''
+        UseDNS no
+      '';
     };
   };
 }
