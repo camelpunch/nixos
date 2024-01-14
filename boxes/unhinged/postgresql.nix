@@ -5,26 +5,21 @@
     ensureDatabases = [
       "affable"
       "atc"
+      "concourse"
       "hosting"
     ];
     ensureUsers = [
       {
         name = "affable";
-        ensurePermissions = {
-          "DATABASE affable" = "ALL PRIVILEGES";
-        };
+        ensureDBOwnership = true;
       }
       {
         name = "hosting";
-        ensurePermissions = {
-          "DATABASE hosting" = "ALL PRIVILEGES";
-        };
+        ensureDBOwnership = true;
       }
       {
         name = "concourse";
-        ensurePermissions = {
-          "DATABASE atc" = "ALL PRIVILEGES";
-        };
+        ensureDBOwnership = true;
       }
     ];
     authentication = ''
