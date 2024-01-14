@@ -10,7 +10,6 @@
       awscli2
       binutils
       cntr
-      colmena
       dig
       dive
       du-dust
