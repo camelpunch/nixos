@@ -53,6 +53,7 @@ in
     };
 
     networking = {
+      useDHCP = false;
       dhcpcd.enable = false;
       firewall.enable = false;
       hostName = "unhinged";
