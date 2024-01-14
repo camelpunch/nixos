@@ -5,7 +5,6 @@
 {
   imports = [
     ./dnsmasq.nix
-    ./github-runner.nix
     ./hardware-configuration.nix
     ./k8s.nix
     ./network.nix
