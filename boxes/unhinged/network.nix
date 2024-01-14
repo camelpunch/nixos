@@ -6,16 +6,6 @@ let
   router-ipv6 = "${prefix-ipv6}::1";
 in
 {
-  boot.initrd.network = {
-    enable = true;
-    ssh = {
-      enable = true;
-      port = 2222;
-      authorizedKeys = [ "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFYJpKCj5tBJtJDwI3imbZ0pe9Vs47E5qirQ27a6XBxLcUkwrJXxKT6SZGJYGi0ZRqIkkVyWyASGPjKjQMumuS0= andrew@p14s" ];
-      hostKeys = [ /boot/host_ecdsa_key ];
-    };
-  };
-
   systemd.network = {
     enable = true;
 
@@ -42,6 +32,7 @@ in
   };
 
   networking = {
+    useDHCP = false;
     dhcpcd.enable = false;
     firewall.enable = false;
     hostName = "unhinged";
