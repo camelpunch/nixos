@@ -7,6 +7,7 @@ with lib;
 
 {
   imports = [
+    ../common/locale.nix
     ./dnsmasq.nix
     ./hardware-configuration.nix
     ./k8s.nix
@@ -41,22 +42,6 @@ with lib;
     # Enable swap on luks
     boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".device = "/dev/disk/by-uuid/9a963459-0310-4197-9c0d-26ecb1df10dd";
     boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".keyFile = "/crypto_keyfile.bin";
-
-    time.timeZone = "Europe/London";
-
-    i18n.defaultLocale = "en_GB.UTF-8";
-
-    i18n.extraLocaleSettings = {
-      LC_ADDRESS = "en_GB.UTF-8";
-      LC_IDENTIFICATION = "en_GB.UTF-8";
-      LC_MEASUREMENT = "en_GB.UTF-8";
-      LC_MONETARY = "en_GB.UTF-8";
-      LC_NAME = "en_GB.UTF-8";
-      LC_NUMERIC = "en_GB.UTF-8";
-      LC_PAPER = "en_GB.UTF-8";
-      LC_TELEPHONE = "en_GB.UTF-8";
-      LC_TIME = "en_GB.UTF-8";
-    };
 
     # Configure keymap in X11
     services.xserver = {
