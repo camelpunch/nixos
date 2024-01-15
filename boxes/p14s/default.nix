@@ -3,7 +3,7 @@
 nixpkgs.lib.nixosSystem {
   inherit system;
   modules = [
+    ../common/steam.nix
     ./configuration.nix
-    ../../modules/steam.nix
   ];
 }
