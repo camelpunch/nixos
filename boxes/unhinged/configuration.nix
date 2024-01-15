@@ -1,10 +1,3 @@
-{ lib
-, pkgs
-, ...
-}:
-
-with lib;
-
 {
   imports = [
     ../common/locale.nix
