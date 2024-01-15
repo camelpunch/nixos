@@ -8,6 +8,7 @@ with lib;
 {
   imports = [
     ../common/locale.nix
+    ../common/user.nix
     ./dnsmasq.nix
     ./hardware-configuration.nix
     ./k8s.nix
@@ -42,17 +43,6 @@ with lib;
     # Enable swap on luks
     boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".device = "/dev/disk/by-uuid/9a963459-0310-4197-9c0d-26ecb1df10dd";
     boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".keyFile = "/crypto_keyfile.bin";
-
-    # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.andrew = {
-      isNormalUser = true;
-      description = "Andrew Bruce";
-      extraGroups = [ "networkmanager" "wheel" ];
-      packages = with pkgs; [
-        dig
-        lsof
-      ];
-    };
 
     system.stateVersion = "22.11"; # Did you read the comment?
   };
