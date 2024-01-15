@@ -75,10 +75,6 @@ with lib;
       ];
     };
 
-    environment.systemPackages = with pkgs; [
-      git
-    ];
-
     system.stateVersion = "22.11"; # Did you read the comment?
   };
 }
