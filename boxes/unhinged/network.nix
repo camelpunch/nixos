@@ -1,31 +1,11 @@
-{ config
-, lib
+{ ipv4
+, ipv6
+, router-ipv4
+, router-ipv6
 , ...
 }:
 
-with lib;
-
-let
-  cfg = config.services.unhinged-network;
-in
 {
-  options = {
-    services.unhinged-network = {
-      ipv4 = mkOption {
-        type = types.str;
-      };
-      ipv6 = mkOption {
-        type = types.str;
-      };
-      router-ipv4 = mkOption {
-        type = types.str;
-      };
-      router-ipv6 = mkOption {
-        type = types.str;
-      };
-    };
-  };
-
   config = {
     systemd.network = {
       enable = true;
@@ -37,16 +17,16 @@ in
           };
           DHCP = "no";
           addresses = [
-            { addressConfig = { Address = "${cfg.ipv4}/24"; }; }
-            { addressConfig = { Address = "${cfg.ipv6}/64"; }; }
+            { addressConfig = { Address = "${ipv4}/24"; }; }
+            { addressConfig = { Address = "${ipv6}/64"; }; }
           ];
           dns = [
             "127.0.0.1"
             "::1"
           ];
           gateway = [
-            "${cfg.router-ipv4}"
-            "${cfg.router-ipv6}"
+            "${router-ipv4}"
+            "${router-ipv6}"
           ];
         };
       };
@@ -65,6 +45,7 @@ in
       settings = {
         PasswordAuthentication = false;
         PermitRootLogin = "yes";
+        UseDns = false;
       };
       listenAddresses = [
         {
@@ -76,9 +57,6 @@ in
           port = 2222;
         }
       ];
-      extraConfig = ''
-        UseDNS no
-      '';
     };
   };
 }
