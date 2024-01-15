@@ -43,12 +43,6 @@ with lib;
     boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".device = "/dev/disk/by-uuid/9a963459-0310-4197-9c0d-26ecb1df10dd";
     boot.initrd.luks.devices."luks-9a963459-0310-4197-9c0d-26ecb1df10dd".keyFile = "/crypto_keyfile.bin";
 
-    # Configure keymap in X11
-    services.xserver = {
-      layout = "us";
-      xkbVariant = "";
-    };
-
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.andrew = {
       isNormalUser = true;
