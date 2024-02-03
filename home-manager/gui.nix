@@ -14,7 +14,6 @@
 
     packages = with pkgs; [
       bless
-      calibre
       gnome3.gnome-tweaks
       libreoffice
       nixos-generators
