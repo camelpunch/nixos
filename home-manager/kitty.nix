@@ -14,6 +14,7 @@
     };
     keybindings = {
       "ctrl+shift+enter" = "launch --cwd=current";
+      "ctrl+shift+t" = "launch --cwd=current --type tab";
     };
   };
 }
