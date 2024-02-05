@@ -3,6 +3,10 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+    nix = {
+      url = "nix/2.20.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,11 +18,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, git-mob }:
+  outputs = { self, nix, nixpkgs, home-manager, git-mob }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       callBox = name: import ./boxes/${name} {
+        nix = nix.packages.${system}.nix;
         inherit nixpkgs system;
       };
     in
