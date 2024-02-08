@@ -14,6 +14,7 @@
 
     packages = with pkgs; [
       bless
+      chromium
       gnome3.gnome-tweaks
       libreoffice
       nixos-generators
