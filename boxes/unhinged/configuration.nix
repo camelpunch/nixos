@@ -1,16 +1,4 @@
 {
-  imports = [
-    ../common/locale.nix
-    ../common/user.nix
-    ./dnsmasq.nix
-    ./hardware-configuration.nix
-    ./k8s.nix
-    ./network.nix
-    ./nix.nix
-    ./postgresql.nix
-    ./tweaks.nix
-  ];
-
   config = {
     # Bootloader.
     boot.loader.systemd-boot.enable = true;

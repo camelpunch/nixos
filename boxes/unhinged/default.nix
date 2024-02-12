@@ -5,6 +5,15 @@ nixpkgs.lib.nixosSystem {
 
   modules = [
     ./configuration.nix
+    ../common/locale.nix
+    ../common/user.nix
+    ./dnsmasq.nix
+    ./hardware-configuration.nix
+    ./k8s.nix
+    ./network.nix
+    ./nix.nix
+    ./postgresql.nix
+    ./tweaks.nix
   ];
 
   specialArgs =
