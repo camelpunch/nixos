@@ -3,5 +3,6 @@
 verb=${1:-switch}
 
 nixos-rebuild "$verb" \
-  --target-host root@unhinged \
-  --flake .#unhinged
+  --target-host unhinged \
+  --flake .#unhinged \
+  --use-remote-sudo

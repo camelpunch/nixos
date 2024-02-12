@@ -40,11 +40,13 @@
       # useNetworkd = true;
     };
 
+    security.sudo.wheelNeedsPassword = false;
+
     services.openssh = {
       enable = true;
       settings = {
         PasswordAuthentication = false;
-        PermitRootLogin = "yes";
+        PermitRootLogin = "no";
         UseDns = false;
       };
       listenAddresses = [
