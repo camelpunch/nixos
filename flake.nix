@@ -5,7 +5,6 @@
     };
     nix = {
       url = "nix/2.20.1";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
