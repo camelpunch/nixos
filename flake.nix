@@ -28,7 +28,7 @@
         inherit nixpkgs system;
         nix = nix.packages.${system}.nix;
         websites = {
-          andrewbruce = code-supply.packages.${system}.andrewbruce;
+          inherit (code-supply.packages.${system}) andrewbruce codesupply;
         };
       };
     in
