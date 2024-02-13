@@ -15,15 +15,21 @@
       # url = "/home/andrew/workspace/rusty-git-mob";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    code-supply = {
+      url = "github:code-supply/code-supply";
+    };
   };
 
-  outputs = { self, nix, nixpkgs, home-manager, git-mob }:
+  outputs = { self, nix, nixpkgs, home-manager, code-supply, git-mob }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       callBox = name: import ./boxes/${name} {
-        nix = nix.packages.${system}.nix;
         inherit nixpkgs system;
+        nix = nix.packages.${system}.nix;
+        websites = {
+          andrewbruce = code-supply.packages.${system}.andrewbruce;
+        };
       };
     in
     {
